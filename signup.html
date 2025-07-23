@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOYE ACADEMY</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Page Script -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">VOYE</a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+                <li class="nav-item"><a href="categories.html" class="nav-link">Categories</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="fqa.html" class="nav-link">FQA</a></li>
+                
+            </ul>
+            <div class="nav-right">
+
+                <div class="lang_curr_dropdonws">
+                    <!-- Language Dropdown -->
+                    <div class="dropdown" id="languageDropdown">
+                        <button class="dropdown-trigger" onclick="toggleDropdown('languageDropdown')">
+                            <span id="selectedLanguage">EN</span>
+                            <span class="dropdown-arrow">
+                                <img src="./assets/media/dropdown-arrow.svg" alt="">
+                            </span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item active" onclick="selectLanguage('EN', 'English')">English</a>
+                            <a href="#" class="dropdown-item" onclick="selectLanguage('AR', 'Arabic')">Arabic</a>
+                        </div>
+                    </div>
+    
+                    <!-- Currency Dropdown -->
+                    <div class="dropdown" id="currencyDropdown">
+                        <button class="dropdown-trigger" onclick="toggleDropdown('currencyDropdown')">
+                            <span id="selectedCurrency">($)USD</span>
+                            <span class="dropdown-arrow">
+                                <img src="./assets/media/dropdown-arrow.svg" alt="">
+                            </span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item active" onclick="selectCurrency('($)USD', 'US Dollar')">($) USD</a>
+                            <a href="#" class="dropdown-item" onclick="selectCurrency('(€)EUR', 'Euro')">€ EUR</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-right-links">
+                    <a href="#" class="register-link">Register</a>
+                    <span class="mx-1">/</span>
+                    <a href="#" class="register-link">How it works</a>
+                </div>
+
+            </div>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()">
+                ☰
+            </button>
+        </nav>
+    </header>
+
+    <!-- Footer -->
+    <footer>
+        <div class="newsletter">
+            <div class="input_group">
+                <input type="text" id="newsletter" class="input" placeholder="Enter your email">
+                <button type="submit">Subscribe</button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container">
+                <div class="footer-content">
+    
+                    <div class="footer-section">
+                        <h4 class="footer-subtitle">How can we Help?</h4>
+                        <ul class="footer-links">
+                            <li><a href="#" class="footer-link">VOYE branches</a></li>
+                            <li><a href="#" class="footer-link">Contact Us</a></li>
+                            <li><a href="#" class="footer-link">FAQ</a></li>
+                            <li><a href="#" class="footer-link">Our Brand</a></li>
+                            <li><a href="#" class="footer-link">Blog</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer-section">
+                        <h4 class="footer-subtitle">Products</h4>
+                        <ul class="footer-links">
+                            <li><a href="#" class="footer-link">Women Make up</a></li>
+                            <li><a href="#" class="footer-link">Women Skincare</a></li>
+                            <li><a href="#" class="footer-link">Gifts & Sets</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4 class="footer-subtitle">keep in touch with VOYE</h4>
+                        <p class="footer-description">
+                            Join the VOYE newsletter and be first to hear about news, offers and skincare advice
+                        </p>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Enter your email" class="newsletter-input">
+                            <button class="btn btn-primary newsletter-btn">Subscribe</button>
+                        </div>
+                        <div class="check-terms">
+                            <input type="checkbox" class="terms-checkbox" name="terms" id="terms">
+                            <label for="terms-checkbox">
+                                By submitting your email, you agree to receive advertising emails from Beautya. Please review our Privacy Policy, which includes our Financial Incentive Notice for CA residents.
+                            </label>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="footer-middle">
+            <div class="container">
+                <div class="footer-contacts">
+
+                    <ul class="contact-links">
+                        <li>
+                            <a href="#">
+                                <img src="./assets/media/location.svg" alt="">
+                                <span>Dr. Richardson, California</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./assets/media/phone.svg" alt="">
+                                <span>1-802-526-2463</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <img src="./assets/media/social_Instagram.svg" alt="">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="./assets/media/social_Facebook.svg" alt="">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="./assets/media/social_Pinterest.svg" alt="">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="./assets/media/social_Twitter.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="flex justify-between items-center">
+                    <p>&copy; 2025 VOYE. All Rights Reserved.</p>
+                    <ul class="footer-bottom-links">
+                        <li>
+                            <a href="#">Terms & Conditions</a>
+                        </li>
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="./assets/script.js"></script>
+</body>
+
+</html>

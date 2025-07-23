@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOYE ACADEMY</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Page Script -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">VOYE</a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+                <li class="nav-item"><a href="categories.html" class="nav-link">Categories</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="fqa.html" class="nav-link">FQA</a></li>
+                
+            </ul>
+            <div class="nav-right">
+
+                <div class="lang_curr_dropdonws">
+                    <!-- Language Dropdown -->
+                    <div class="dropdown" id="languageDropdown">
+                        <button class="dropdown-trigger" onclick="toggleDropdown('languageDropdown')">
+                            <span id="selectedLanguage">EN</span>
+                            <span class="dropdown-arrow">
+                                <img src="./assets/media/dropdown-arrow.svg" alt="">
+                            </span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item active" onclick="selectLanguage('EN', 'English')">English</a>
+                            <a href="#" class="dropdown-item" onclick="selectLanguage('AR', 'Arabic')">Arabic</a>
+                        </div>
+                    </div>
+    
+                    <!-- Currency Dropdown -->
+                    <div class="dropdown" id="currencyDropdown">
+                        <button class="dropdown-trigger" onclick="toggleDropdown('currencyDropdown')">
+                            <span id="selectedCurrency">($)USD</span>
+                            <span class="dropdown-arrow">
+                                <img src="./assets/media/dropdown-arrow.svg" alt="">
+                            </span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item active" onclick="selectCurrency('($)USD', 'US Dollar')">($) USD</a>
+                            <a href="#" class="dropdown-item" onclick="selectCurrency('(€)EUR', 'Euro')">€ EUR</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-right-links">
+                    <a href="#" class="register-link">Register</a>
+                    <span class="mx-1">/</span>
+                    <a href="#" class="register-link">How it works</a>
+                </div>
+
+            </div>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()">
+                ☰
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        CRAFTING THE ART<br>
+                        OF PRESENCE
+                    </h1>
+
+                    <p class="hero-description">
+                        Experience professional makeup techniques with our comprehensive courses
+                        designed to enhance your natural beauty.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-large rounded-full">Start Learning</button>
+                        <button class="btn btn-outline btn-large rounded-full">View Courses</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="rotating-type">
+            <div class="first-type">
+                <img src="./assets/media/value-proposition.svg" class="w-full" alt="">
+            </div>
+            <div class="second-type">
+                <img src="./assets/media/value-proposition_opacity.svg" class="w-full" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Courses</h2>
+            </div>
+
+            <div id="courseSwiper" class="courses-grid swiper mySwiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="course-card">
+                            <div class="course-badge">Bestseller</div>
+                            <img src="./assets/media/course-1.jpg" alt="Basic Makeup Course" class="course-image">
+                            <div class="course-content">
+                                <h3 class="course-title">Basic Makeup Techniques</h3>
+                                <p class="course-description">Master the fundamentals of makeup application</p>
+                                <div class="course-price">
+                                    <span class="price">$99</span>
+                                    <span class="price-old">$149</span>
+                                </div>
+                                <a href="#" class="btn btn-primary course-btn">
+                                    <span>View More</span>
+                                    <span class="arrow-icon">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="course-card">
+                            <div class="course-badge course-badge-new">New</div>
+                            <img src="./assets/media/course-2.jpg" alt="Advanced Techniques Course"
+                                class="course-image">
+                            <div class="course-content">
+                                <h3 class="course-title">Advanced Techniques</h3>
+                                <p class="course-description">Professional level makeup artistry skills</p>
+                                <div class="course-price">
+                                    <span class="price">$199</span>
+                                    <span class="price-old">$299</span>
+                                </div>
+                                <a href="#" class="btn btn-primary course-btn">
+                                    <span>View More</span>
+                                    <span class="arrow-icon">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="course-card">
+                            <img src="./assets/media/course-1.jpg" alt="Bridal Makeup Course" class="course-image">
+                            <div class="course-content">
+                                <h3 class="course-title">Bridal Makeup</h3>
+                                <p class="course-description">Specialized bridal makeup techniques</p>
+                                <div class="course-price">
+                                    <span class="price">$249</span>
+                                    <span class="price-old">$349</span>
+                                </div>
+                                <a href="#" class="btn btn-primary course-btn">
+                                    <span>View More</span>
+                                    <span class="arrow-icon">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="course-card">
+                            <img src="./assets/media/course-2.jpg" alt="Special Effects Course" class="course-image">
+                            <div class="course-content">
+                                <h3 class="course-title">Special Effects</h3>
+                                <p class="course-description">Creative and theatrical makeup designs</p>
+                                <div class="course-price">
+                                    <span class="price">$299</span>
+                                    <span class="price-old">$399</span>
+                                </div>
+                                <a href="#" class="btn btn-primary course-btn">
+                                    <span>View More</span>
+                                    <span class="arrow-icon">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="course-card">
+                            <div class="course-badge">Bestseller</div>
+                            <img src="./assets/media/course-1.jpg" alt="Basic Makeup Course" class="course-image">
+                            <div class="course-content">
+                                <h3 class="course-title">Basic Makeup Techniques</h3>
+                                <p class="course-description">Master the fundamentals of makeup application</p>
+                                <div class="course-price">
+                                    <span class="price">$99</span>
+                                    <span class="price-old">$149</span>
+                                </div>
+                                <a href="#" class="btn btn-primary course-btn">
+                                    <span>View More</span>
+                                    <span class="arrow-icon">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="course-card">
+                            <div class="course-badge course-badge-new">New</div>
+                            <img src="./assets/media/course-2.jpg" alt="Advanced Techniques Course"
+                                class="course-image">
+                            <div class="course-content">
+                                <h3 class="course-title">Advanced Techniques</h3>
+                                <p class="course-description">Professional level makeup artistry skills</p>
+                                <div class="course-price">
+                                    <span class="price">$199</span>
+                                    <span class="price-old">$299</span>
+                                </div>
+                                <a href="#" class="btn btn-primary course-btn">
+                                    <span>View More</span>
+                                    <span class="arrow-icon">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="course-card">
+                            <img src="./assets/media/course-1.jpg" alt="Bridal Makeup Course" class="course-image">
+                            <div class="course-content">
+                                <h3 class="course-title">Bridal Makeup</h3>
+                                <p class="course-description">Specialized bridal makeup techniques</p>
+                                <div class="course-price">
+                                    <span class="price">$249</span>
+                                    <span class="price-old">$349</span>
+                                </div>
+                                <a href="#" class="btn btn-primary course-btn">
+                                    <span>View More</span>
+                                    <span class="arrow-icon">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="course-card">
+                            <img src="./assets/media/course-2.jpg" alt="Special Effects Course" class="course-image">
+                            <div class="course-content">
+                                <h3 class="course-title">Special Effects</h3>
+                                <p class="course-description">Creative and theatrical makeup designs</p>
+                                <div class="course-price">
+                                    <span class="price">$299</span>
+                                    <span class="price-old">$399</span>
+                                </div>
+                                <a href="#" class="btn btn-primary course-btn">
+                                    <span>View More</span>
+                                    <span class="arrow-icon">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-description">Testimonials</p>
+                <h2 class="section-title">Our Customers Reviews</h2>
+            </div>
+
+            <div class="reviews-grid">
+                <div id="reviewsSwiper" class="courses-grid swiper mySwiper">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="stars">
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                                <p class="review-text">"The courses are incredibly detailed and the instructors are
+                                    amazing. I've
+                                    learned so much!"</p>
+                                <div class="reviewer">
+                                    <div class="reviewer-avatar">
+                                        <img src="./assets/media/avatar-1.png" alt="">
+                                    </div>
+                                    <div class="reviewer-info">
+                                        <h4 class="reviewer-name">Sarah Johnson</h4>
+                                        <p class="reviewer-title">Makeup Artist</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="stars">
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                </div>
+                                <p class="review-text">"Perfect for beginners! The step-by-step approach made everything
+                                    so easy to
+                                    follow."</p>
+                                <div class="reviewer">
+                                    <div class="reviewer-avatar">
+                                        <img src="./assets/media/avatar-1.png" alt="">
+                                    </div>
+                                    <div class="reviewer-info">
+                                        <h4 class="reviewer-name">Maria Garcia</h4>
+                                        <p class="reviewer-title">Beauty Enthusiast</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="stars">
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                </div>
+                                <p class="review-text">"Perfect for beginners! The step-by-step approach made everything
+                                    so easy to
+                                    follow."</p>
+                                <div class="reviewer">
+                                    <div class="reviewer-avatar">
+                                        <img src="./assets/media/avatar-1.png" alt="">
+                                    </div>
+                                    <div class="reviewer-info">
+                                        <h4 class="reviewer-name">Maria Garcia</h4>
+                                        <p class="reviewer-title">Beauty Enthusiast</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="stars">
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                </div>
+                                <p class="review-text">"Professional quality courses that really help you develop real
+                                    skills.
+                                    Highly recommended!"</p>
+                                <div class="reviewer">
+                                    <div class="reviewer-avatar">
+                                        <img src="./assets/media/avatar-1.png" alt="">
+                                    </div>
+                                    <div class="reviewer-info">
+                                        <h4 class="reviewer-name">Emily Chen</h4>
+                                        <p class="reviewer-title">Professional MUA</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="stars">
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                                <p class="review-text">"The courses are incredibly detailed and the instructors are
+                                    amazing. I've
+                                    learned so much!"</p>
+                                <div class="reviewer">
+                                    <div class="reviewer-avatar">
+                                        <img src="./assets/media/avatar-1.png" alt="">
+                                    </div>
+                                    <div class="reviewer-info">
+                                        <h4 class="reviewer-name">Sarah Johnson</h4>
+                                        <p class="reviewer-title">Makeup Artist</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="stars">
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                </div>
+                                <p class="review-text">"Perfect for beginners! The step-by-step approach made everything
+                                    so easy to
+                                    follow."</p>
+                                <div class="reviewer">
+                                    <div class="reviewer-avatar">
+                                        <img src="./assets/media/avatar-1.png" alt="">
+                                    </div>
+                                    <div class="reviewer-info">
+                                        <h4 class="reviewer-name">Maria Garcia</h4>
+                                        <p class="reviewer-title">Beauty Enthusiast</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="stars">
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                </div>
+                                <p class="review-text">"Perfect for beginners! The step-by-step approach made everything
+                                    so easy to
+                                    follow."</p>
+                                <div class="reviewer">
+                                    <div class="reviewer-avatar">
+                                        <img src="./assets/media/avatar-1.png" alt="">
+                                    </div>
+                                    <div class="reviewer-info">
+                                        <h4 class="reviewer-name">Maria Garcia</h4>
+                                        <p class="reviewer-title">Beauty Enthusiast</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="stars">
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                    <span class="star rated">★</span>
+                                </div>
+                                <p class="review-text">"Professional quality courses that really help you develop real
+                                    skills.
+                                    Highly recommended!"</p>
+                                <div class="reviewer">
+                                    <div class="reviewer-avatar">
+                                        <img src="./assets/media/avatar-1.png" alt="">
+                                    </div>
+                                    <div class="reviewer-info">
+                                        <h4 class="reviewer-name">Emily Chen</h4>
+                                        <p class="reviewer-title">Professional MUA</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="about" class="process">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-description">working strategy</p>
+                <h2 class="section-title">our work process</h2>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-img">
+                        <img src="./assets/media/procces-1.svg" alt="">
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Choose Your Course</h3>
+                        <p class="step-description">Select from our range of comprehensive makeup courses designed for
+                            all skill levels</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    
+                    <div class="step-img">
+                        <img src="./assets/media/procces-2.svg" alt="">
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Learn at Your Pace</h3>
+                        <p class="step-description">Access high-quality video lessons and practice with our expert
+                            guidance</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    
+                    <div class="step-img">
+                        <img src="./assets/media/procces-3.svg" alt="">
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Master Your Skills</h3>
+                        <p class="step-description">Apply your knowledge and receive certification upon course
+                            completion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Latest Beauty Tips</h2>
+            </div>
+
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <a href="#" class="blog-link-image">
+                        <img src="./assets/media/blog-1.jpg" alt="Blog post" class="blog-image">
+                    </a>
+                    <div class="blog-content">
+                        <a href="#" class="blog-title">10 Essential Makeup Brushes</a>
+                        <div class="blog-info">
+                            <span class="blog-category">Makeup Tips</span>
+                            <span class="separator mx-2">|</span>
+                            <span class="blog-author">By Jane Doe</span>
+                            <span class="separator mx-2">|</span>
+                            <span class="blog-read-time">Jul 10, 2025</span>
+                        </div>
+                        <p class="blog-excerpt">Discover the must-have tools that will transform your makeup
+                            application...</p>
+                        <a href="#" class="blog-link">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <a href="#" class="blog-link-image">
+                        <img src="./assets/media/blog-2.jpg" alt="Blog post" class="blog-image">
+                    </a>
+                    <div class="blog-content">
+                        <a href="#" class="blog-title">Summer Makeup Trends That Will Dominate 2024</a>
+                        <div class="blog-info">
+                            <span class="blog-category">Makeup Tips</span>
+                            <span class="separator mx-2">|</span>
+                            <span class="blog-author">By Jane Doe</span>
+                            <span class="separator mx-2">|</span>
+                            <span class="blog-read-time">Jul 10, 2025</span>
+                        </div>
+                        <p class="blog-excerpt">Get ahead of the curve with these stunning summer makeup looks...</p>
+                        <a href="#" class="blog-link">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <a href="#" class="blog-link-image">
+                        <img src="./assets/media/blog-1.jpg" alt="Blog post" class="blog-image">
+                    </a>
+                    <div class="blog-content">
+                        <a href="#" class="blog-title">How to Choose the Perfect Foundation Shade</a>
+                        <div class="blog-info">
+                            <span class="blog-category">Makeup Tips</span>
+                            <span class="separator mx-2">|</span>
+                            <span class="blog-author">By Jane Doe</span>
+                            <span class="separator mx-2">|</span>
+                            <span class="blog-read-time">Jul 10, 2025</span>
+                        </div>
+                        <p class="blog-excerpt">Master the art of finding your perfect foundation match...</p>
+                        <a href="#" class="blog-link">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="relative z-1">
+            <div class="container">
+
+                <div class="section-header">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                </div>
+    
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Are the courses suitable for complete beginners?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely! Our courses are designed with beginners in mind. We start with the basics and
+                                gradually build up to more advanced techniques.</p>
+                        </div>
+                    </div>
+    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Do I get lifetime access to the courses?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, once you purchase a course, you'll have lifetime access to all course materials and any
+                                future updates.</p>
+                        </div>
+                    </div>
+    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Is there a certificate upon completion?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, you'll receive a certificate of completion for each course you finish, which you can add
+                                to your professional portfolio.</p>
+                        </div>
+                    </div>
+    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What materials do I need for the courses?
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Each course comes with a detailed list of recommended products and tools. We also offer
+                                starter kits for purchase.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="newsletter">
+            <div class="input_group">
+                <input type="text" id="newsletter" class="input" placeholder="Enter your email">
+                <button type="submit">Subscribe</button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container">
+                <div class="footer-content">
+    
+                    <div class="footer-section">
+                        <h4 class="footer-subtitle">How can we Help?</h4>
+                        <ul class="footer-links">
+                            <li><a href="#" class="footer-link">VOYE branches</a></li>
+                            <li><a href="#" class="footer-link">Contact Us</a></li>
+                            <li><a href="#" class="footer-link">FAQ</a></li>
+                            <li><a href="#" class="footer-link">Our Brand</a></li>
+                            <li><a href="#" class="footer-link">Blog</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="footer-section">
+                        <h4 class="footer-subtitle">Products</h4>
+                        <ul class="footer-links">
+                            <li><a href="#" class="footer-link">Women Make up</a></li>
+                            <li><a href="#" class="footer-link">Women Skincare</a></li>
+                            <li><a href="#" class="footer-link">Gifts & Sets</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4 class="footer-subtitle">keep in touch with VOYE</h4>
+                        <p class="footer-description">
+                            Join the VOYE newsletter and be first to hear about news, offers and skincare advice
+                        </p>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Enter your email" class="newsletter-input">
+                            <button class="btn btn-primary newsletter-btn">Subscribe</button>
+                        </div>
+                        <div class="check-terms">
+                            <input type="checkbox" class="terms-checkbox" name="terms" id="terms">
+                            <label for="terms-checkbox">
+                                By submitting your email, you agree to receive advertising emails from Beautya. Please review our Privacy Policy, which includes our Financial Incentive Notice for CA residents.
+                            </label>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="footer-middle">
+            <div class="container">
+                <div class="footer-contacts">
+
+                    <ul class="contact-links">
+                        <li>
+                            <a href="#">
+                                <img src="./assets/media/location.svg" alt="">
+                                <span>Dr. Richardson, California</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./assets/media/phone.svg" alt="">
+                                <span>1-802-526-2463</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <img src="./assets/media/social_Instagram.svg" alt="">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="./assets/media/social_Facebook.svg" alt="">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="./assets/media/social_Pinterest.svg" alt="">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="./assets/media/social_Twitter.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="flex justify-between items-center">
+                    <p>&copy; 2025 VOYE. All Rights Reserved.</p>
+                    <ul class="footer-bottom-links">
+                        <li>
+                            <a href="#">Terms & Conditions</a>
+                        </li>
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Page Script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper("#courseSwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+                dynamicBullets: true,
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                },
+            },
+        });
+    </script>
+    <script>
+        var swiper = new Swiper("#reviewsSwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+                dynamicBullets: true,
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                },
+            },
+        });
+    </script>
+
+    <script src="./assets/script.js"></script>
+</body>
+
+</html>

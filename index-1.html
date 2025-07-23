@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOYE ACADEMY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>VIVIR</h1>
+                </div>
+                
+                <nav class="nav desktop-nav">
+                    <a href="courses.html" class="nav-link">Courses</a>
+                    <a href="courses.html" class="nav-link">Categories</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="fqa.html" class="nav-link">FQA</a>
+                </nav>
+
+                <div class="header-cta desktop-only">
+                    <button class="btn btn-primary">Get Started</button>
+                </div>
+
+                <div class="mobile-menu-toggle">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </div>
+            </div>
+            
+            <div class="mobile-menu">
+                <a href="#" class="mobile-nav-link">Home</a>
+                <a href="#courses" class="mobile-nav-link">Courses</a>
+                <a href="#about" class="mobile-nav-link">About</a>
+                <a href="#blog" class="mobile-nav-link">Blog</a>
+                <a href="#contact" class="mobile-nav-link">Contact</a>
+                <button class="btn btn-primary mobile-cta">Get Started</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        CRAFTING THE ART<br>
+                        <span class="hero-highlight">OF PRESENCE</span>
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Experience professional makeup techniques with our comprehensive courses 
+                        designed to enhance your natural beauty.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-large">Start Learning</button>
+                        <button class="btn btn-outline btn-large">View Courses</button>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="src/assets/hero-woman.jpg" alt="Professional makeup artist" class="hero-img">
+                        <div class="image-backdrop"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Popular Courses</h2>
+                <p class="section-description">Transform your skills with our expertly crafted makeup courses</p>
+            </div>
+            
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-badge">Bestseller</div>
+                    <img src="src/assets/course-1.jpg" alt="Basic Makeup Course" class="course-image">
+                    <div class="course-content">
+                        <h3 class="course-title">Basic Makeup Techniques</h3>
+                        <p class="course-description">Master the fundamentals of makeup application</p>
+                        <div class="course-price">
+                            <span class="price">$99</span>
+                            <span class="price-old">$149</span>
+                        </div>
+                        <button class="btn btn-primary course-btn">Enroll Now</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-badge course-badge-new">New</div>
+                    <img src="src/assets/course-2.jpg" alt="Advanced Techniques Course" class="course-image">
+                    <div class="course-content">
+                        <h3 class="course-title">Advanced Techniques</h3>
+                        <p class="course-description">Professional level makeup artistry skills</p>
+                        <div class="course-price">
+                            <span class="price">$199</span>
+                            <span class="price-old">$299</span>
+                        </div>
+                        <button class="btn btn-primary course-btn">Enroll Now</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <img src="src/assets/course-3.jpg" alt="Bridal Makeup Course" class="course-image">
+                    <div class="course-content">
+                        <h3 class="course-title">Bridal Makeup</h3>
+                        <p class="course-description">Specialized bridal makeup techniques</p>
+                        <div class="course-price">
+                            <span class="price">$249</span>
+                            <span class="price-old">$349</span>
+                        </div>
+                        <button class="btn btn-primary course-btn">Enroll Now</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <img src="src/assets/course-4.jpg" alt="Special Effects Course" class="course-image">
+                    <div class="course-content">
+                        <h3 class="course-title">Special Effects</h3>
+                        <p class="course-description">Creative and theatrical makeup designs</p>
+                        <div class="course-price">
+                            <span class="price">$299</span>
+                            <span class="price-old">$399</span>
+                        </div>
+                        <button class="btn btn-primary course-btn">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Students Say</h2>
+                <p class="section-description">Real feedback from our amazing community</p>
+            </div>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="review-text">"The courses are incredibly detailed and the instructors are amazing. I've learned so much!"</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">S</div>
+                        <div class="reviewer-info">
+                            <h4 class="reviewer-name">Sarah Johnson</h4>
+                            <p class="reviewer-title">Makeup Artist</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="review-text">"Perfect for beginners! The step-by-step approach made everything so easy to follow."</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">M</div>
+                        <div class="reviewer-info">
+                            <h4 class="reviewer-name">Maria Garcia</h4>
+                            <p class="reviewer-title">Beauty Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="review-text">"Professional quality courses that really help you develop real skills. Highly recommended!"</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">E</div>
+                        <div class="reviewer-info">
+                            <h4 class="reviewer-name">Emily Chen</h4>
+                            <p class="reviewer-title">Professional MUA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="about" class="process">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-description">Your journey to makeup mastery in three simple steps</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Choose Your Course</h3>
+                        <p class="step-description">Select from our range of comprehensive makeup courses designed for all skill levels</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Learn at Your Pace</h3>
+                        <p class="step-description">Access high-quality video lessons and practice with our expert guidance</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Master Your Skills</h3>
+                        <p class="step-description">Apply your knowledge and receive certification upon course completion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Latest Beauty Tips</h2>
+                <p class="section-description">Stay updated with the latest trends and techniques</p>
+            </div>
+            
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <img src="src/assets/course-1.jpg" alt="Blog post" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-date">March 15, 2024</div>
+                        <h3 class="blog-title">10 Essential Makeup Brushes Every Beginner Needs</h3>
+                        <p class="blog-excerpt">Discover the must-have tools that will transform your makeup application...</p>
+                        <a href="#" class="blog-link">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="src/assets/course-2.jpg" alt="Blog post" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-date">March 12, 2024</div>
+                        <h3 class="blog-title">Summer Makeup Trends That Will Dominate 2024</h3>
+                        <p class="blog-excerpt">Get ahead of the curve with these stunning summer makeup looks...</p>
+                        <a href="#" class="blog-link">Read More</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="src/assets/course-3.jpg" alt="Blog post" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-date">March 10, 2024</div>
+                        <h3 class="blog-title">How to Choose the Perfect Foundation Shade</h3>
+                        <p class="blog-excerpt">Master the art of finding your perfect foundation match...</p>
+                        <a href="#" class="blog-link">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-description">Find answers to common questions about our courses</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Are the courses suitable for complete beginners?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! Our courses are designed with beginners in mind. We start with the basics and gradually build up to more advanced techniques.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do I get lifetime access to the courses?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, once you purchase a course, you'll have lifetime access to all course materials and any future updates.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is there a certificate upon completion?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, you'll receive a certificate of completion for each course you finish, which you can add to your professional portfolio.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What materials do I need for the courses?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Each course comes with a detailed list of recommended products and tools. We also offer starter kits for purchase.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">VIVIR</h3>
+                    <p class="footer-description">Crafting the art of presence through professional makeup education.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">YouTube</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Courses</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Basic Makeup</a></li>
+                        <li><a href="#" class="footer-link">Advanced Techniques</a></li>
+                        <li><a href="#" class="footer-link">Bridal Makeup</a></li>
+                        <li><a href="#" class="footer-link">Special Effects</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Help Center</a></li>
+                        <li><a href="#" class="footer-link">Contact Us</a></li>
+                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="#" class="footer-link">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Newsletter</h4>
+                    <p class="newsletter-text">Stay updated with the latest tips and courses</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" class="newsletter-input">
+                        <button class="btn btn-primary newsletter-btn">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 VIVIR. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
