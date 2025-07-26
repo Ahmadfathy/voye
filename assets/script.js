@@ -340,7 +340,7 @@ document.addEventListener("DOMContentLoaded", function () {
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
-        z-index: 1000;
+        z-index: 20;
         box-shadow: var(--shadow-button);
     `;
 

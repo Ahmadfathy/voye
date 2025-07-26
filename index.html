@@ -14,99 +14,107 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <nav class="nav-container">
-            <a href="#" class="logo">VOYE</a>
-            
-            <ul class="nav-menu" id="navMenu">
-                    <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
-                    <li class="nav-item dropdown categories-dropdown" id="categoriesDropdown">
-                        <a href="#" class="nav-link dropdown-trigger" onclick="toggleDropdown('categoriesDropdown', event)">
-                            Categories
-                            <span class="dropdown-arrow">
-                                <img src="./assets/media/dropdown-arrow.svg" alt="">
-                            </span>
-                        </a>
-                        <div class="dropdown-menu categories-menu">
-                            <div class="category-item">
-                                <a href="#" class="category-link" onclick="toggleSubmenu(this)">
-                                    <!-- <span class="category-icon">💻</span> -->
-                                    <span>Technology</span>
-                                    <span class="submenu-arrow">
-                                        <img src="./assets/media/dropdown-arrow.svg" alt="">
-                                    </span>
-                                </a>
-                                <div class="submenu">
-                                    <a href="#" class="submenu-item">Web Development</a>
-                                    <a href="#" class="submenu-item">Mobile Apps</a>
-                                    <a href="#" class="submenu-item">Data Science</a>
-                                    <a href="#" class="submenu-item">AI & Machine Learning</a>
+        <div class="container">
+            <nav class="nav-container">
+                <a href="#" class="logo">VOYE</a>
+                <div class="nav-menu" id="navMenu">
+                    <ul class="nav-menu-list">
+                        <li class="nav-item dropdown categories-dropdown" id="categoriesDropdown">
+                            <a href="#" class="nav-link dropdown-trigger" onclick="toggleDropdown('categoriesDropdown', event)">
+                                Categories
+                                <span class="dropdown-arrow">
+                                    <img src="./assets/media/dropdown-arrow.svg" alt="">
+                                </span>
+                            </a>
+                            <div class="dropdown-menu categories-menu">
+                                <div class="category-item">
+                                    <a href="#" class="category-link" onclick="toggleSubmenu(this)">
+                                        <!-- <span class="category-icon">💻</span> -->
+                                        <span>Technology</span>
+                                        <span class="submenu-arrow">
+                                            <img src="./assets/media/dropdown-arrow.svg" alt="">
+                                        </span>
+                                    </a>
+                                    <div class="submenu">
+                                        <a href="#" class="submenu-item">Web Development</a>
+                                        <a href="#" class="submenu-item">Mobile Apps</a>
+                                        <a href="#" class="submenu-item">Data Science</a>
+                                        <a href="#" class="submenu-item">AI & Machine Learning</a>
+                                    </div>
+                                </div>
+                                <div class="category-item">
+                                    <a href="#" class="category-link" onclick="toggleSubmenu(this)">
+                                        <!-- <span class="category-icon">🎨</span> -->
+                                        <span>Design</span>
+                                        <span class="submenu-arrow">
+                                            <img src="./assets/media/dropdown-arrow.svg" alt="">
+                                        </span>
+                                    </a>
+                                    <div class="submenu">
+                                        <a href="#" class="submenu-item">UI/UX Design</a>
+                                        <a href="#" class="submenu-item">Graphic Design</a>
+                                        <a href="#" class="submenu-item">3D Modeling</a>
+                                        <a href="#" class="submenu-item">Photography</a>
+                                    </div>
+                                </div>
+                                <div class="category-item">
+                                    <a href="#" class="category-link">
+                                        <!-- <span class="category-icon">💼</span> -->
+                                        <span>Business</span>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="category-item">
-                                <a href="#" class="category-link" onclick="toggleSubmenu(this)">
-                                    <!-- <span class="category-icon">🎨</span> -->
-                                    <span>Design</span>
-                                    <span class="submenu-arrow">
-                                        <img src="./assets/media/dropdown-arrow.svg" alt="">
-                                    </span>
-                                </a>
-                                <div class="submenu">
-                                    <a href="#" class="submenu-item">UI/UX Design</a>
-                                    <a href="#" class="submenu-item">Graphic Design</a>
-                                    <a href="#" class="submenu-item">3D Modeling</a>
-                                    <a href="#" class="submenu-item">Photography</a>
-                                </div>
+                        </li>
+                        <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+                    </ul>
+                    <ul class="nav-language-currency">
+                        <!-- Language Dropdown -->
+                        <li class="nav-item dropdown" id="languageDropdown">
+                            <button class="nav-link dropdown-trigger" onclick="toggleDropdown('languageDropdown', event)">
+                                <span id="selectedLanguage">EN</span>
+                                <span class="dropdown-arrow">
+                                    <img src="./assets/media/dropdown-arrow.svg" alt="">
+                                </span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item active" onclick="selectLanguage('EN', 'English')">English</a>
+                                <a href="#" class="dropdown-item" onclick="selectLanguage('AR', 'Arabic')">Arabic</a>
                             </div>
-                            <div class="category-item">
-                                <a href="#" class="category-link">
-                                    <!-- <span class="category-icon">💼</span> -->
-                                    <span>Business</span>
-                                </a>
+                        </li>
+                        <!-- Currency Dropdown -->
+                        <li class="nav-item dropdown" id="currencyDropdown">
+                            <button class="nav-link dropdown-trigger" onclick="toggleDropdown('currencyDropdown', event)">
+                                💰 <span id="selectedCurrency">($)USD</span>
+                                <span class="dropdown-arrow">
+                                    <img src="./assets/media/dropdown-arrow.svg" alt="">
+                                </span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item active" onclick="selectCurrency('($)USD', 'US Dollar')">($)
+                                    USD</a>
+                                <a href="#" class="dropdown-item" onclick="selectCurrency('(€)EUR', 'Euro')">€ EUR</a>
                             </div>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                    <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
-               
-                    <!-- Language Dropdown -->
-                    <li class="nav-item dropdown" id="languageDropdown">
-                        <button class="nav-link dropdown-trigger" onclick="toggleDropdown('languageDropdown', event)">
-                            <span id="selectedLanguage">EN</span>
-                            <span class="dropdown-arrow">
-                                <img src="./assets/media/dropdown-arrow.svg" alt="">
-                            </span>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item active" onclick="selectLanguage('EN', 'English')">English</a>
-                            <a href="#" class="dropdown-item" onclick="selectLanguage('AR', 'Arabic')">Arabic</a>
-                        </div>
-                    </li>
-                    <!-- Currency Dropdown -->
-                    <li class="nav-item dropdown" id="currencyDropdown">
-                        <button class="nav-link dropdown-trigger" onclick="toggleDropdown('currencyDropdown', event)">
-                            💰 <span id="selectedCurrency">($)USD</span>
-                            <span class="dropdown-arrow">
-                                <img src="./assets/media/dropdown-arrow.svg" alt="">
-                            </span>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item active" onclick="selectCurrency('($)USD', 'US Dollar')">($) USD</a>
-                            <a href="#" class="dropdown-item" onclick="selectCurrency('(€)EUR', 'Euro')">€ EUR</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link register-link">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link register-link">Register</a>
-                    </li>
-            </ul>
-
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()">
-                ☰
-            </button>
-        </nav>
+                        </li>
+                    </ul>
+                    <ul class="nav-login-register">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link register-link">Login</a>
+                        </li>
+                        <li class="auth-separate hidden md:block">/</li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link register-link">Register</a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()">
+                    ☰
+                </button>
+            </nav>
+        </div>
     </header>
 
     <!-- Hero Section -->
@@ -541,7 +549,7 @@
                 </div>
 
                 <div class="process-step">
-                    
+
                     <div class="step-img">
                         <img src="./assets/media/procces-2.svg" alt="">
                     </div>
@@ -553,7 +561,7 @@
                 </div>
 
                 <div class="process-step">
-                    
+
                     <div class="step-img">
                         <img src="./assets/media/procces-3.svg" alt="">
                     </div>
@@ -641,7 +649,7 @@
                 <div class="section-header">
                     <h2 class="section-title">Frequently Asked Questions</h2>
                 </div>
-    
+
                 <div class="faq-container">
                     <div class="faq-item">
                         <button class="faq-question">
@@ -653,29 +661,31 @@
                                 gradually build up to more advanced techniques.</p>
                         </div>
                     </div>
-    
+
                     <div class="faq-item">
                         <button class="faq-question">
                             Do I get lifetime access to the courses?
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
-                            <p>Yes, once you purchase a course, you'll have lifetime access to all course materials and any
+                            <p>Yes, once you purchase a course, you'll have lifetime access to all course materials and
+                                any
                                 future updates.</p>
                         </div>
                     </div>
-    
+
                     <div class="faq-item">
                         <button class="faq-question">
                             Is there a certificate upon completion?
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-answer">
-                            <p>Yes, you'll receive a certificate of completion for each course you finish, which you can add
+                            <p>Yes, you'll receive a certificate of completion for each course you finish, which you can
+                                add
                                 to your professional portfolio.</p>
                         </div>
                     </div>
-    
+
                     <div class="faq-item">
                         <button class="faq-question">
                             What materials do I need for the courses?
@@ -703,7 +713,7 @@
         <div class="footer">
             <div class="container">
                 <div class="footer-content">
-    
+
                     <div class="footer-section">
                         <h4 class="footer-subtitle">How can we Help?</h4>
                         <ul class="footer-links">
@@ -714,7 +724,7 @@
                             <li><a href="#" class="footer-link">Blog</a></li>
                         </ul>
                     </div>
-    
+
                     <div class="footer-section">
                         <h4 class="footer-subtitle">Products</h4>
                         <ul class="footer-links">
@@ -736,16 +746,18 @@
                         <div class="check-terms">
                             <input type="checkbox" class="terms-checkbox" name="terms" id="terms">
                             <label for="terms-checkbox">
-                                By submitting your email, you agree to receive advertising emails from Beautya. Please review our Privacy Policy, which includes our Financial Incentive Notice for CA residents.
+                                By submitting your email, you agree to receive advertising emails from Beautya. Please
+                                review our Privacy Policy, which includes our Financial Incentive Notice for CA
+                                residents.
                             </label>
                         </div>
-                        
+
                     </div>
                 </div>
-                
+
             </div>
         </div>
-        
+
         <div class="footer-middle">
             <div class="container">
                 <div class="footer-contacts">
