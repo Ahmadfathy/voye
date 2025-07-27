@@ -20,7 +20,8 @@
                 <div class="nav-menu" id="navMenu">
                     <ul class="nav-menu-list w-full order-1">
                         <li class="nav-item dropdown categories-dropdown" id="categoriesDropdown">
-                            <a href="#" class="nav-link dropdown-trigger" onclick="toggleDropdown('categoriesDropdown', event)">
+                            <a href="#" class="nav-link dropdown-trigger"
+                                onclick="toggleDropdown('categoriesDropdown', event)">
                                 <span class="dropdown-title">Categories</span>
                                 <span class="dropdown-arrow">
                                     <img src="./assets/media/dropdown-arrow.svg" alt="">
@@ -73,27 +74,31 @@
                     <ul class="nav-language-currency w-full order-3 md:order-2">
                         <!-- Language Dropdown -->
                         <li class="nav-item dropdown" id="languageDropdown">
-                            <button class="nav-link dropdown-trigger" onclick="toggleDropdown('languageDropdown', event)">
+                            <button class="nav-link dropdown-trigger"
+                                onclick="toggleDropdown('languageDropdown', event)">
                                 <span id="selectedLanguage">EN</span>
                                 <span class="dropdown-arrow">
                                     <img src="./assets/media/dropdown-arrow.svg" alt="">
                                 </span>
                             </button>
                             <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item active" onclick="selectLanguage('EN', 'English')">English</a>
+                                <a href="#" class="dropdown-item active"
+                                    onclick="selectLanguage('EN', 'English')">English</a>
                                 <a href="#" class="dropdown-item" onclick="selectLanguage('AR', 'Arabic')">Arabic</a>
                             </div>
                         </li>
                         <!-- Currency Dropdown -->
                         <li class="nav-item dropdown" id="currencyDropdown">
-                            <button class="nav-link dropdown-trigger" onclick="toggleDropdown('currencyDropdown', event)">
+                            <button class="nav-link dropdown-trigger"
+                                onclick="toggleDropdown('currencyDropdown', event)">
                                 <span id="selectedCurrency">($)USD</span>
                                 <span class="dropdown-arrow">
                                     <img src="./assets/media/dropdown-arrow.svg" alt="">
                                 </span>
                             </button>
                             <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item active" onclick="selectCurrency('($)USD', 'US Dollar')">($)
+                                <a href="#" class="dropdown-item active"
+                                    onclick="selectCurrency('($)USD', 'US Dollar')">($)
                                     USD</a>
                                 <a href="#" class="dropdown-item" onclick="selectCurrency('(€)EUR', 'Euro')">€ EUR</a>
                             </div>
@@ -109,7 +114,7 @@
                         </li>
                     </ul>
                 </div>
-    
+
                 <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()">
                     ☰
                 </button>
@@ -133,10 +138,14 @@
                     </p>
 
                     <div class="hero-buttons">
-                        <button class="btn btn-primary btn-large rounded-full">Start Learning</button>
-                        <button class="btn btn-outline btn-large rounded-full">View Courses</button>
+                        <button class="btn btn-primary rounded-full">Start Learning</button>
+                        <button class="btn btn-outline rounded-full">View Courses</button>
                     </div>
                 </div>
+                <div class="hero-image md:hidden">
+                    <img src="./assets/media/banner_img.png" alt="Hero Image" class="w-full">
+                </div>
+
 
             </div>
         </div>
