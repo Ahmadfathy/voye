@@ -18,10 +18,10 @@
             <nav class="nav-container">
                 <a href="#" class="logo">VOYE</a>
                 <div class="nav-menu" id="navMenu">
-                    <ul class="nav-menu-list">
+                    <ul class="nav-menu-list w-full order-1">
                         <li class="nav-item dropdown categories-dropdown" id="categoriesDropdown">
                             <a href="#" class="nav-link dropdown-trigger" onclick="toggleDropdown('categoriesDropdown', event)">
-                                Categories
+                                <span class="dropdown-title">Categories</span>
                                 <span class="dropdown-arrow">
                                     <img src="./assets/media/dropdown-arrow.svg" alt="">
                                 </span>
@@ -70,7 +70,7 @@
                         <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
                         <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
                     </ul>
-                    <ul class="nav-language-currency">
+                    <ul class="nav-language-currency w-full order-3 md:order-2">
                         <!-- Language Dropdown -->
                         <li class="nav-item dropdown" id="languageDropdown">
                             <button class="nav-link dropdown-trigger" onclick="toggleDropdown('languageDropdown', event)">
@@ -87,7 +87,7 @@
                         <!-- Currency Dropdown -->
                         <li class="nav-item dropdown" id="currencyDropdown">
                             <button class="nav-link dropdown-trigger" onclick="toggleDropdown('currencyDropdown', event)">
-                                💰 <span id="selectedCurrency">($)USD</span>
+                                <span id="selectedCurrency">($)USD</span>
                                 <span class="dropdown-arrow">
                                     <img src="./assets/media/dropdown-arrow.svg" alt="">
                                 </span>
@@ -99,13 +99,13 @@
                             </div>
                         </li>
                     </ul>
-                    <ul class="nav-login-register">
+                    <ul class="nav-login-register w-full order-1 md:order-3">
                         <li class="nav-item">
-                            <a href="#" class="nav-link register-link">Login</a>
+                            <a href="login.html" class="nav-link register-link">Login</a>
                         </li>
                         <li class="auth-separate hidden md:block">/</li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link register-link">Register</a>
+                            <a href="signup.html" class="nav-link register-link">Register</a>
                         </li>
                     </ul>
                 </div>

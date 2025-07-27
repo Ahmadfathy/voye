@@ -6,84 +6,227 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VOYE ACADEMY</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Page Script -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./assets/styles.css">
 </head>
 
 <body>
     <!-- Header -->
     <header class="header">
-        <nav class="nav-container">
-            <a href="#" class="logo">VOYE</a>
-            
-            <ul class="nav-menu" id="navMenu">
-                <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
-                <li class="nav-item"><a href="categories.html" class="nav-link">Categories</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="fqa.html" class="nav-link">FQA</a></li>
-                
-            </ul>
-            <div class="nav-right">
+        <div class="container">
+            <nav class="nav-container">
+                <a href="#" class="logo">VOYE</a>
+                <div class="nav-menu" id="navMenu">
+                    <ul class="nav-menu-list w-full order-1">
+                        <li class="nav-item dropdown categories-dropdown" id="categoriesDropdown">
+                            <a href="#" class="nav-link dropdown-trigger"
+                                onclick="toggleDropdown('categoriesDropdown', event)">
+                                <span class="dropdown-title">Categories</span>
+                                <span class="dropdown-arrow">
+                                    <img src="./assets/media/dropdown-arrow.svg" alt="">
+                                </span>
+                            </a>
+                            <div class="dropdown-menu categories-menu">
+                                <div class="category-item">
+                                    <a href="#" class="category-link" onclick="toggleSubmenu(this)">
+                                        <!-- <span class="category-icon">💻</span> -->
+                                        <span>Technology</span>
+                                        <span class="submenu-arrow">
+                                            <img src="./assets/media/dropdown-arrow.svg" alt="">
+                                        </span>
+                                    </a>
+                                    <div class="submenu">
+                                        <a href="#" class="submenu-item">Web Development</a>
+                                        <a href="#" class="submenu-item">Mobile Apps</a>
+                                        <a href="#" class="submenu-item">Data Science</a>
+                                        <a href="#" class="submenu-item">AI & Machine Learning</a>
+                                    </div>
+                                </div>
+                                <div class="category-item">
+                                    <a href="#" class="category-link" onclick="toggleSubmenu(this)">
+                                        <!-- <span class="category-icon">🎨</span> -->
+                                        <span>Design</span>
+                                        <span class="submenu-arrow">
+                                            <img src="./assets/media/dropdown-arrow.svg" alt="">
+                                        </span>
+                                    </a>
+                                    <div class="submenu">
+                                        <a href="#" class="submenu-item">UI/UX Design</a>
+                                        <a href="#" class="submenu-item">Graphic Design</a>
+                                        <a href="#" class="submenu-item">3D Modeling</a>
+                                        <a href="#" class="submenu-item">Photography</a>
+                                    </div>
+                                </div>
+                                <div class="category-item">
+                                    <a href="#" class="category-link">
+                                        <!-- <span class="category-icon">💼</span> -->
+                                        <span>Business</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+                    </ul>
+                    <ul class="nav-language-currency w-full order-3 md:order-2">
+                        <!-- Language Dropdown -->
+                        <li class="nav-item dropdown" id="languageDropdown">
+                            <button class="nav-link dropdown-trigger"
+                                onclick="toggleDropdown('languageDropdown', event)">
+                                <span id="selectedLanguage">EN</span>
+                                <span class="dropdown-arrow">
+                                    <img src="./assets/media/dropdown-arrow.svg" alt="">
+                                </span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item active"
+                                    onclick="selectLanguage('EN', 'English')">English</a>
+                                <a href="#" class="dropdown-item" onclick="selectLanguage('AR', 'Arabic')">Arabic</a>
+                            </div>
+                        </li>
+                        <!-- Currency Dropdown -->
+                        <li class="nav-item dropdown" id="currencyDropdown">
+                            <button class="nav-link dropdown-trigger"
+                                onclick="toggleDropdown('currencyDropdown', event)">
+                                <span id="selectedCurrency">($)USD</span>
+                                <span class="dropdown-arrow">
+                                    <img src="./assets/media/dropdown-arrow.svg" alt="">
+                                </span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item active"
+                                    onclick="selectCurrency('($)USD', 'US Dollar')">($)
+                                    USD</a>
+                                <a href="#" class="dropdown-item" onclick="selectCurrency('(€)EUR', 'Euro')">€ EUR</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="nav-login-register w-full order-1 md:order-3">
+                        <li class="nav-item">
+                            <a href="login.html" class="nav-link register-link">Login</a>
+                        </li>
+                        <li class="auth-separate hidden md:block">/</li>
+                        <li class="nav-item">
+                            <a href="signup.html" class="nav-link register-link">Register</a>
+                        </li>
+                    </ul>
+                </div>
 
-                <div class="lang_curr_dropdonws">
-                    <!-- Language Dropdown -->
-                    <div class="dropdown" id="languageDropdown">
-                        <button class="dropdown-trigger" onclick="toggleDropdown('languageDropdown')">
-                            <span id="selectedLanguage">EN</span>
-                            <span class="dropdown-arrow">
-                                <img src="./assets/media/dropdown-arrow.svg" alt="">
-                            </span>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item active" onclick="selectLanguage('EN', 'English')">English</a>
-                            <a href="#" class="dropdown-item" onclick="selectLanguage('AR', 'Arabic')">Arabic</a>
-                        </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()">
+                    ☰
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="login-wrapper">
+            <div class="image-section">
+                <img src="/lovable-uploads/9ccadd50-4a3a-469b-a5c0-f9fbec4a04e0.png" alt="Wellness" class="hero-image">
+            </div>
+            
+            <div class="form-section">
+                <div class="form-header">
+                    <h1 class="form-title">Create an account</h1>
+                    <p class="form-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lobortis maximus</p>
+                </div>
+    
+                <form id="signupForm" novalidate>
+                    <div class="form-group">
+                        <label for="fullName" class="form-label">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" class="form-input" required>
+                        <div class="error-message" id="fullNameError">Please enter your full name</div>
                     </div>
     
-                    <!-- Currency Dropdown -->
-                    <div class="dropdown" id="currencyDropdown">
-                        <button class="dropdown-trigger" onclick="toggleDropdown('currencyDropdown')">
-                            <span id="selectedCurrency">($)USD</span>
-                            <span class="dropdown-arrow">
-                                <img src="./assets/media/dropdown-arrow.svg" alt="">
-                            </span>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item active" onclick="selectCurrency('($)USD', 'US Dollar')">($) USD</a>
-                            <a href="#" class="dropdown-item" onclick="selectCurrency('(€)EUR', 'Euro')">€ EUR</a>
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone number</label>
+                        <div class="phone-input-wrapper">
+                            <select class="country-select" id="countryCode">
+                                <option value="+1">🇺🇸</option>
+                                <option value="+44">🇬🇧</option>
+                                <option value="+33">🇫🇷</option>
+                                <option value="+49">🇩🇪</option>
+                                <option value="+81">🇯🇵</option>
+                                <option value="+86">🇨🇳</option>
+                                <option value="+91">🇮🇳</option>
+                            </select>
+                            <input type="tel" id="phone" name="phone" class="form-input phone-input" required>
                         </div>
+                        <div class="error-message" id="phoneError">Please enter a valid phone number</div>
                     </div>
+    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                        <div class="error-message" id="emailError">Please enter a valid email address</div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" name="password" class="form-input" required>
+                            <button type="button" class="password-toggle" data-target="password">Hide</button>
+                        </div>
+                        <div class="error-message" id="passwordError">Password must be at least 8 characters</div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" required>
+                            <button type="button" class="password-toggle" data-target="confirmPassword">Hide</button>
+                        </div>
+                        <div class="error-message" id="confirmPasswordError">Passwords do not match</div>
+                    </div>
+    
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="terms" name="terms" class="checkbox-input" required>
+                        <label for="terms" class="checkbox-label">
+                            By creating an account, I agree to our <a href="#" target="_blank">Terms of use</a> and 
+                            <a href="#" target="_blank">Privacy Policy</a>
+                        </label>
+                    </div>
+    
+                    <button type="submit" class="btn-primary" id="submitBtn">Sign up</button>
+                </form>
+    
+                <div class="divider">
+                    <span>OR</span>
                 </div>
-
-                <div class="nav-right-links">
-                    <a href="#" class="register-link">Register</a>
-                    <span class="mx-1">/</span>
-                    <a href="#" class="register-link">How it works</a>
+    
+                <button type="button" class="btn-google" id="googleBtn">
+                    <svg class="google-icon" viewBox="0 0 24 24">
+                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                    </svg>
+                    Continue with Google
+                </button>
+    
+                <div class="login-link">
+                    Already have an account?
+                    <a href="#" id="loginLink">Log in</a>
                 </div>
-
             </div>
-
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()">
-                ☰
-            </button>
-        </nav>
-    </header>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
-        <div class="newsletter">
+        <!-- <div class="newsletter">
             <div class="input_group">
                 <input type="text" id="newsletter" class="input" placeholder="Enter your email">
                 <button type="submit">Subscribe</button>
             </div>
-        </div>
+        </div> -->
 
         <div class="footer">
             <div class="container">
                 <div class="footer-content">
-    
+
                     <div class="footer-section">
                         <h4 class="footer-subtitle">How can we Help?</h4>
                         <ul class="footer-links">
@@ -94,7 +237,7 @@
                             <li><a href="#" class="footer-link">Blog</a></li>
                         </ul>
                     </div>
-    
+
                     <div class="footer-section">
                         <h4 class="footer-subtitle">Products</h4>
                         <ul class="footer-links">
@@ -116,16 +259,18 @@
                         <div class="check-terms">
                             <input type="checkbox" class="terms-checkbox" name="terms" id="terms">
                             <label for="terms-checkbox">
-                                By submitting your email, you agree to receive advertising emails from Beautya. Please review our Privacy Policy, which includes our Financial Incentive Notice for CA residents.
+                                By submitting your email, you agree to receive advertising emails from Beautya. Please
+                                review our Privacy Policy, which includes our Financial Incentive Notice for CA
+                                residents.
                             </label>
                         </div>
-                        
+
                     </div>
                 </div>
-                
+
             </div>
         </div>
-        
+
         <div class="footer-middle">
             <div class="container">
                 <div class="footer-contacts">
@@ -183,6 +328,241 @@
     </footer>
 
     <script src="./assets/script.js"></script>
+
+    <script>
+        // Form validation and functionality
+        class FormValidator {
+            constructor() {
+                this.form = document.getElementById('signupForm');
+                this.inputs = this.form.querySelectorAll('.form-input');
+                this.submitBtn = document.getElementById('submitBtn');
+                this.googleBtn = document.getElementById('googleBtn');
+                
+                this.init();
+            }
+
+            init() {
+                this.setupPasswordToggles();
+                this.setupFormValidation();
+                this.setupEventListeners();
+            }
+
+            setupPasswordToggles() {
+                const toggles = document.querySelectorAll('.password-toggle');
+                toggles.forEach(toggle => {
+                    toggle.addEventListener('click', (e) => {
+                        const targetId = e.target.dataset.target;
+                        const input = document.getElementById(targetId);
+                        const isPassword = input.type === 'password';
+                        
+                        input.type = isPassword ? 'text' : 'password';
+                        e.target.textContent = isPassword ? 'Show' : 'Hide';
+                    });
+                });
+            }
+
+            setupFormValidation() {
+                this.inputs.forEach(input => {
+                    input.addEventListener('blur', () => this.validateField(input));
+                    input.addEventListener('input', () => this.clearError(input));
+                });
+
+                this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+            }
+
+            setupEventListeners() {
+                this.googleBtn.addEventListener('click', () => this.handleGoogleSignup());
+                document.getElementById('loginLink').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    this.handleLogin();
+                });
+            }
+
+            validateField(input) {
+                const value = input.value.trim();
+                const fieldName = input.name;
+                let isValid = true;
+                let errorMessage = '';
+
+                switch (fieldName) {
+                    case 'fullName':
+                        isValid = value.length >= 2 && /^[a-zA-Z\s]+$/.test(value);
+                        errorMessage = 'Please enter a valid full name (letters only, at least 2 characters)';
+                        break;
+
+                    case 'phone':
+                        isValid = /^\d{10,15}$/.test(value.replace(/\D/g, ''));
+                        errorMessage = 'Please enter a valid phone number (10-15 digits)';
+                        break;
+
+                    case 'email':
+                        isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+                        errorMessage = 'Please enter a valid email address';
+                        break;
+
+                    case 'password':
+                        isValid = value.length >= 8 && /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(value);
+                        errorMessage = 'Password must be at least 8 characters with uppercase, lowercase, and number';
+                        break;
+
+                    case 'confirmPassword':
+                        const password = document.getElementById('password').value;
+                        isValid = value === password && value.length > 0;
+                        errorMessage = 'Passwords do not match';
+                        break;
+                }
+
+                this.showError(input, isValid ? '' : errorMessage);
+                return isValid;
+            }
+
+            showError(input, message) {
+                const errorElement = document.getElementById(input.name + 'Error');
+                
+                if (message) {
+                    input.classList.add('error');
+                    errorElement.textContent = message;
+                    errorElement.classList.add('show');
+                } else {
+                    input.classList.remove('error');
+                    errorElement.classList.remove('show');
+                }
+            }
+
+            clearError(input) {
+                input.classList.remove('error');
+                const errorElement = document.getElementById(input.name + 'Error');
+                errorElement.classList.remove('show');
+            }
+
+            validateForm() {
+                let isValid = true;
+                
+                this.inputs.forEach(input => {
+                    if (!this.validateField(input)) {
+                        isValid = false;
+                    }
+                });
+
+                // Check terms checkbox
+                const termsCheckbox = document.getElementById('terms');
+                if (!termsCheckbox.checked) {
+                    alert('Please accept the Terms of use and Privacy Policy');
+                    isValid = false;
+                }
+
+                return isValid;
+            }
+
+            async handleSubmit(e) {
+                e.preventDefault();
+                
+                if (!this.validateForm()) {
+                    return;
+                }
+
+                this.setLoading(this.submitBtn, true);
+
+                try {
+                    // Simulate API call
+                    await this.simulateSignup();
+                    this.showSuccess('Account created successfully! Welcome aboard!');
+                } catch (error) {
+                    this.showError(null, 'Something went wrong. Please try again.');
+                } finally {
+                    this.setLoading(this.submitBtn, false);
+                }
+            }
+
+            async handleGoogleSignup() {
+                this.setLoading(this.googleBtn, true);
+                
+                try {
+                    // Simulate Google OAuth
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    this.showSuccess('Google signup successful! Welcome!');
+                } catch (error) {
+                    this.showError(null, 'Google signup failed. Please try again.');
+                } finally {
+                    this.setLoading(this.googleBtn, false);
+                }
+            }
+
+            handleLogin() {
+                alert('Redirecting to login page...');
+                // In a real app, you would redirect to the login page
+                // window.location.href = '/login';
+            }
+
+            setLoading(button, isLoading) {
+                if (isLoading) {
+                    button.disabled = true;
+                    button.classList.add('loading');
+                } else {
+                    button.disabled = false;
+                    button.classList.remove('loading');
+                }
+            }
+
+            async simulateSignup() {
+                // Simulate network delay
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                // Randomly simulate success/failure for demo
+                if (Math.random() > 0.1) {
+                    return { success: true };
+                } else {
+                    throw new Error('Signup failed');
+                }
+            }
+
+            showSuccess(message) {
+                // Create a simple success notification
+                const notification = document.createElement('div');
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: #10b981;
+                    color: white;
+                    padding: 16px 24px;
+                    border-radius: 8px;
+                    font-weight: 500;
+                    z-index: 1000;
+                    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+                    animation: slideIn 0.3s ease;
+                `;
+                notification.textContent = message;
+                
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.remove();
+                }, 4000);
+            }
+        }
+
+        // Initialize the form when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new FormValidator();
+        });
+
+        // Add slide-in animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 
 </html>
