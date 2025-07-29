@@ -7,6 +7,49 @@
     <title>VOYE ACADEMY</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="./assets/styles.css">
+    <style>
+        /* Hide blog cards after the first 6 */
+        .blog-card:nth-child(n+7) {
+            display: none;
+        }
+        
+        /* Load more button styles */
+        .load-more-container {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            font-size: 0.875rem;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: hsl(18, 86%, 50%);
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -18,7 +61,8 @@
                 <div class="nav-menu" id="navMenu">
                     <ul class="nav-menu-list w-full order-1">
                         <li class="nav-item dropdown categories-dropdown" id="categoriesDropdown">
-                            <a href="#" class="nav-link dropdown-trigger" onclick="toggleDropdown('categoriesDropdown', event)">
+                            <a href="#" class="nav-link dropdown-trigger"
+                                onclick="toggleDropdown('categoriesDropdown', event)">
                                 <span class="dropdown-title">Categories</span>
                                 <span class="dropdown-arrow">
                                     <img src="./assets/media/dropdown-arrow.svg" alt="">
@@ -71,27 +115,31 @@
                     <ul class="nav-language-currency w-full order-3 md:order-2">
                         <!-- Language Dropdown -->
                         <li class="nav-item dropdown" id="languageDropdown">
-                            <button class="nav-link dropdown-trigger" onclick="toggleDropdown('languageDropdown', event)">
+                            <button class="nav-link dropdown-trigger"
+                                onclick="toggleDropdown('languageDropdown', event)">
                                 <span id="selectedLanguage">EN</span>
                                 <span class="dropdown-arrow">
                                     <img src="./assets/media/dropdown-arrow.svg" alt="">
                                 </span>
                             </button>
                             <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item active" onclick="selectLanguage('EN', 'English')">English</a>
+                                <a href="#" class="dropdown-item active"
+                                    onclick="selectLanguage('EN', 'English')">English</a>
                                 <a href="#" class="dropdown-item" onclick="selectLanguage('AR', 'Arabic')">Arabic</a>
                             </div>
                         </li>
                         <!-- Currency Dropdown -->
                         <li class="nav-item dropdown" id="currencyDropdown">
-                            <button class="nav-link dropdown-trigger" onclick="toggleDropdown('currencyDropdown', event)">
+                            <button class="nav-link dropdown-trigger"
+                                onclick="toggleDropdown('currencyDropdown', event)">
                                 <span id="selectedCurrency">($)USD</span>
                                 <span class="dropdown-arrow">
                                     <img src="./assets/media/dropdown-arrow.svg" alt="">
                                 </span>
                             </button>
                             <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item active" onclick="selectCurrency('($)USD', 'US Dollar')">($)
+                                <a href="#" class="dropdown-item active"
+                                    onclick="selectCurrency('($)USD', 'US Dollar')">($)
                                     USD</a>
                                 <a href="#" class="dropdown-item" onclick="selectCurrency('(€)EUR', 'Euro')">€ EUR</a>
                             </div>
@@ -107,7 +155,7 @@
                         </li>
                     </ul>
                 </div>
-    
+
                 <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()">
                     ☰
                 </button>
@@ -117,7 +165,327 @@
 
     <!-- Main Content -->
     <main class="main-content">
-      
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Latest Beauty Tips</h2>
+                </div>
+
+                <div class="blog-grid">
+                    <!-- Blog Card 1 -->
+                    <article class="blog-card">
+                        <a href="#" class="blog-link-image">
+                            <img src="./assets/media/blog-1.jpg" alt="10 Essential Makeup Brushes" class="blog-image">
+                        </a>
+                        <div class="blog-content">
+                            <div class="blog-info">
+                                <span class="blog-category">Makeup Tips</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-author">By Jane Doe</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-read-time">Jul 10, 2025</span>
+                            </div>
+                            <a href="#" class="blog-title">10 Essential Makeup Brushes</a>
+                            <p class="blog-excerpt">Discover the must-have tools that will transform your makeup application...</p>
+                            <a href="#" class="blog-link">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 2 -->
+                    <article class="blog-card">
+                        <a href="#" class="blog-link-image">
+                            <img src="./assets/media/blog-2.jpg" alt="Summer Makeup Trends That Will Dominate 2024" class="blog-image">
+                        </a>
+                        <div class="blog-content">
+                            <div class="blog-info">
+                                <span class="blog-category">Makeup Tips</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-author">By Jane Doe</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-read-time">Jul 10, 2025</span>
+                            </div>
+                            <a href="#" class="blog-title">Summer Makeup Trends That Will Dominate 2024</a>
+                            <p class="blog-excerpt">Get ahead of the curve with these stunning summer makeup looks...</p>
+                            <a href="#" class="blog-link">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 3 -->
+                    <article class="blog-card">
+                        <a href="#" class="blog-link-image">
+                            <img src="./assets/media/blog-1.jpg" alt="How to Choose the Perfect Foundation Shade" class="blog-image">
+                        </a>
+                        <div class="blog-content">
+                            <div class="blog-info">
+                                <span class="blog-category">Makeup Tips</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-author">By Jane Doe</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-read-time">Jul 10, 2025</span>
+                            </div>
+                            <a href="#" class="blog-title">How to Choose the Perfect Foundation Shade</a>
+                            <p class="blog-excerpt">Master the art of finding your perfect foundation match...</p>
+                            <a href="#" class="blog-link">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 4 -->
+                    <article class="blog-card">
+                        <a href="#" class="blog-link-image">
+                            <img src="./assets/media/blog-2.jpg" alt="Daily Skincare Routine for Glowing Skin" class="blog-image">
+                        </a>
+                        <div class="blog-content">
+                            <div class="blog-info">
+                                <span class="blog-category">Skincare</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-author">By Dr. Sarah Wilson</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-read-time">Jul 8, 2025</span>
+                            </div>
+                            <a href="#" class="blog-title">Daily Skincare Routine for Glowing Skin</a>
+                            <p class="blog-excerpt">Learn the essential steps for a complete daily skincare routine...</p>
+                            <a href="#" class="blog-link">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 5 -->
+                    <article class="blog-card">
+                        <a href="#" class="blog-link-image">
+                            <img src="./assets/media/blog-1.jpg" alt="The Rise of Natural Beauty" class="blog-image">
+                        </a>
+                        <div class="blog-content">
+                            <div class="blog-info">
+                                <span class="blog-category">Beauty Trends</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-author">By Sarah Johnson</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-read-time">Jul 8, 2025</span>
+                            </div>
+                            <a href="#" class="blog-title">The Rise of Natural Beauty</a>
+                            <p class="blog-excerpt">Exploring the growing trend towards natural, minimal makeup looks...</p>
+                            <a href="#" class="blog-link">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 6 -->
+                    <article class="blog-card">
+                        <a href="#" class="blog-link-image">
+                            <img src="./assets/media/blog-2.jpg" alt="Reshaping Beauty Standards and Patient Care" class="blog-image">
+                        </a>
+                        <div class="blog-content">
+                            <div class="blog-info">
+                                <span class="blog-category">Aesthetics</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-author">By Tracey Wilson</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-read-time">July 15, 2025</span>
+                            </div>
+                            <a href="#" class="blog-title">Reshaping Beauty Standards and Patient Care</a>
+                            <p class="blog-excerpt">Discover how modern aesthetics are reshaping beauty standards...</p>
+                            <a href="#" class="blog-link">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 7 -->
+                    <article class="blog-card">
+                        <a href="#" class="blog-link-image">
+                            <img src="./assets/media/blog-1.jpg" alt="Anti-Aging Secrets Revealed" class="blog-image">
+                        </a>
+                        <div class="blog-content">
+                            <div class="blog-info">
+                                <span class="blog-category">Skincare</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-author">By Dr. Emily Chen</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-read-time">Jul 7, 2025</span>
+                            </div>
+                            <a href="#" class="blog-title">Anti-Aging Secrets Revealed</a>
+                            <p class="blog-excerpt">Professional tips and tricks for maintaining youthful skin...</p>
+                            <a href="#" class="blog-link">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 8 -->
+                    <article class="blog-card">
+                        <a href="#" class="blog-link-image">
+                            <img src="./assets/media/blog-2.jpg" alt="Professional Contouring Techniques" class="blog-image">
+                        </a>
+                        <div class="blog-content">
+                            <div class="blog-info">
+                                <span class="blog-category">Makeup Tips</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-author">By Maria Garcia</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-read-time">Jul 6, 2025</span>
+                            </div>
+                            <a href="#" class="blog-title">Professional Contouring Techniques</a>
+                            <p class="blog-excerpt">Master the art of contouring with these professional techniques...</p>
+                            <a href="#" class="blog-link">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 9 -->
+                    <article class="blog-card">
+                        <a href="#" class="blog-link-image">
+                            <img src="./assets/media/blog-1.jpg" alt="Sustainable Beauty Products Guide" class="blog-image">
+                        </a>
+                        <div class="blog-content">
+                            <div class="blog-info">
+                                <span class="blog-category">Beauty Trends</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-author">By Lisa Thompson</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-read-time">Jul 5, 2025</span>
+                            </div>
+                            <a href="#" class="blog-title">Sustainable Beauty Products Guide</a>
+                            <p class="blog-excerpt">Discover eco-friendly beauty products that are good for you and the planet...</p>
+                            <a href="#" class="blog-link">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 10 -->
+                    <article class="blog-card">
+                        <a href="#" class="blog-link-image">
+                            <img src="./assets/media/blog-2.jpg" alt="Acne Treatment Solutions" class="blog-image">
+                        </a>
+                        <div class="blog-content">
+                            <div class="blog-info">
+                                <span class="blog-category">Skincare</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-author">By Dr. Michael Brown</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-read-time">Jul 4, 2025</span>
+                            </div>
+                            <a href="#" class="blog-title">Acne Treatment Solutions</a>
+                            <p class="blog-excerpt">Effective treatments and prevention strategies for clear skin...</p>
+                            <a href="#" class="blog-link">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 11 -->
+                    <article class="blog-card">
+                        <a href="#" class="blog-link-image">
+                            <img src="./assets/media/blog-1.jpg" alt="Bridal Makeup Masterclass" class="blog-image">
+                        </a>
+                        <div class="blog-content">
+                            <div class="blog-info">
+                                <span class="blog-category">Makeup Tips</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-author">By Jessica Lee</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-read-time">Jul 3, 2025</span>
+                            </div>
+                            <a href="#" class="blog-title">Bridal Makeup Masterclass</a>
+                            <p class="blog-excerpt">Complete guide to creating the perfect bridal makeup look...</p>
+                            <a href="#" class="blog-link">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 12 -->
+                    <article class="blog-card">
+                        <a href="#" class="blog-link-image">
+                            <img src="./assets/media/blog-2.jpg" alt="Korean Beauty Secrets" class="blog-image">
+                        </a>
+                        <div class="blog-content">
+                            <div class="blog-info">
+                                <span class="blog-category">Beauty Trends</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-author">By Kim Soo-jin</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-read-time">Jul 2, 2025</span>
+                            </div>
+                            <a href="#" class="blog-title">Korean Beauty Secrets</a>
+                            <p class="blog-excerpt">Discover the secrets behind Korean beauty routines and products...</p>
+                            <a href="#" class="blog-link">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 13 -->
+                    <article class="blog-card">
+                        <a href="#" class="blog-link-image">
+                            <img src="./assets/media/blog-1.jpg" alt="Sensitive Skin Care Guide" class="blog-image">
+                        </a>
+                        <div class="blog-content">
+                            <div class="blog-info">
+                                <span class="blog-category">Skincare</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-author">By Dr. Amanda White</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-read-time">Jul 1, 2025</span>
+                            </div>
+                            <a href="#" class="blog-title">Sensitive Skin Care Guide</a>
+                            <p class="blog-excerpt">Gentle and effective skincare for sensitive skin types...</p>
+                            <a href="#" class="blog-link">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 14 -->
+                    <article class="blog-card">
+                        <a href="#" class="blog-link-image">
+                            <img src="./assets/media/blog-2.jpg" alt="Evening Makeup Transformation" class="blog-image">
+                        </a>
+                        <div class="blog-content">
+                            <div class="blog-info">
+                                <span class="blog-category">Makeup Tips</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-author">By Sophie Anderson</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-read-time">Jun 30, 2025</span>
+                            </div>
+                            <a href="#" class="blog-title">Evening Makeup Transformation</a>
+                            <p class="blog-excerpt">Transform your day look into a stunning evening makeup...</p>
+                            <a href="#" class="blog-link">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 15 -->
+                    <article class="blog-card">
+                        <a href="#" class="blog-link-image">
+                            <img src="./assets/media/blog-1.jpg" alt="Minimalist Makeup Movement" class="blog-image">
+                        </a>
+                        <div class="blog-content">
+                            <div class="blog-info">
+                                <span class="blog-category">Beauty Trends</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-author">By Emma Davis</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-read-time">Jun 29, 2025</span>
+                            </div>
+                            <a href="#" class="blog-title">Minimalist Makeup Movement</a>
+                            <p class="blog-excerpt">Embracing the beauty of natural, minimal makeup looks...</p>
+                            <a href="#" class="blog-link">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 16 -->
+                    <article class="blog-card">
+                        <a href="#" class="blog-link-image">
+                            <img src="./assets/media/blog-2.jpg" alt="Winter Skincare Essentials" class="blog-image">
+                        </a>
+                        <div class="blog-content">
+                            <div class="blog-info">
+                                <span class="blog-category">Skincare</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-author">By Dr. Rachel Green</span>
+                                <span class="separator mx-2">|</span>
+                                <span class="blog-read-time">Jun 28, 2025</span>
+                            </div>
+                            <a href="#" class="blog-title">Winter Skincare Essentials</a>
+                            <p class="blog-excerpt">Essential skincare products and routines for cold weather...</p>
+                            <a href="#" class="blog-link">Read More</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="load-more-container">
+                    <button class="btn btn-primary" id="loadMoreBtn" onclick="loadMoreBlogs()">
+                        <span>View More</span>
+                        <span>↓</span>
+                    </button>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -234,6 +602,53 @@
     </footer>
 
     <script src="./assets/script.js"></script>
+    <script>
+        // Load more functionality
+        let currentVisibleCards = 6;
+        const totalCards = 16;
+        const cardsPerLoad = 6;
+        let isLoading = false;
+
+        // Load more blogs function
+        function loadMoreBlogs() {
+            if (isLoading) return;
+
+            isLoading = true;
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            
+            // Disable button and show loading state
+            loadMoreBtn.disabled = true;
+            loadMoreBtn.innerHTML = '<span>Loading...</span>';
+
+            // Simulate API call delay
+            setTimeout(() => {
+                // Show next 6 cards
+                const nextBatchStart = currentVisibleCards + 1;
+                const nextBatchEnd = Math.min(currentVisibleCards + cardsPerLoad, totalCards);
+                
+                // Show the next batch of cards
+                for (let i = nextBatchStart; i <= nextBatchEnd; i++) {
+                    const card = document.querySelector(`.blog-card:nth-child(${i})`);
+                    if (card) {
+                        card.style.display = 'block';
+                    }
+                }
+                
+                currentVisibleCards = nextBatchEnd;
+                
+                // Hide button if all cards are shown
+                if (currentVisibleCards >= totalCards) {
+                    loadMoreBtn.style.display = 'none';
+                } else {
+                    // Re-enable button
+                    loadMoreBtn.disabled = false;
+                    loadMoreBtn.innerHTML = '<span>View More</span><span>↓</span>';
+                }
+                
+                isLoading = false;
+            }, 800);
+        }
+    </script>
 
 </body>
 
