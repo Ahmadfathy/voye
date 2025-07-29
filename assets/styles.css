@@ -367,7 +367,7 @@ section {
 
 .submenu-item {
   display: block;
-  padding: .75rem;
+  padding: 0.75rem;
   color: #495057;
   text-decoration: none;
   font-size: 13px;
@@ -611,7 +611,7 @@ section {
     justify-content: center;
     background-color: var(--primary-light);
     color: var(--primary);
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     text-decoration: none;
     transition: var(--transition-smooth);
     text-align: center;
@@ -743,11 +743,10 @@ section {
   gap: 1rem;
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
-.hero-buttons button{
+.hero-buttons button {
   border-radius: calc(infinity * 1px);
-  padding: .75rem 1rem;
+  padding: 0.75rem 1rem;
 }
-
 
 .image-container {
   position: relative;
@@ -802,7 +801,8 @@ section {
     flex-direction: row;
     text-align: left;
   }
-  .first-type, .second-type {
+  .first-type,
+  .second-type {
     /* top: 10rem; */
   }
 }
@@ -1582,9 +1582,18 @@ footer {
   width: 100%;
 }
 .about-hero {
+  padding: 0;
+  position: relative;
+  margin: 0.75rem;
+}
+.about-hero-bg {
+  border-radius: 0.75rem;
+}
+.about-hero-bg img {
+  border-radius: 0.75rem;
 }
 .about-hero-content {
-  max-width: 1200px;
+  max-width: 70%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -1592,32 +1601,25 @@ footer {
   gap: 2.5rem;
   flex-wrap: wrap;
   padding: 0 2rem;
+  position: absolute;
+  top: 15%;
 }
 .about-hero-text {
   flex: 1 1 55%;
-  min-width: 260px;
 }
 .about-title {
   color: var(--primary);
-  font-size: 2.1rem;
-  font-weight: 800;
+  font-size: 1rem;
+  font-weight: 600;
   margin-bottom: 1.2rem;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-align: left;
   animation: fadeInDown 1s;
 }
-.about-subtitle {
-  color: var(--text-dark);
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 1.1rem;
-  text-align: left;
-  animation: fadeInDown 1.2s;
-}
 .about-desc {
   color: var(--text);
-  font-size: 1.1rem;
+  font-size: 0.7rem;
   line-height: 1.7;
   text-align: left;
   animation: fadeInDown 1.3s;
@@ -1666,23 +1668,28 @@ footer {
 }
 .about-section-title {
   color: var(--primary);
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 700;
-  margin-bottom: 2.2rem;
-  text-align: left;
+  margin: 2.2rem 0;
+  text-align: center;
+}
+.about-section-title img {
+  display: block;
+  text-align: center;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 .about-preparing-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2.5rem 2rem;
   align-items: start;
 }
 .about-role,
 .about-value {
-  background: #fff;
-  border-radius: 1.2rem;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-  padding: 2rem 1.5rem;
   min-width: 220px;
   animation: fadeIn 1.2s;
 }
@@ -1701,13 +1708,18 @@ footer {
   margin: 0;
 }
 .about-role-img,
-.about-value-img {
-  width: 300px;
-  height: 280px;
-  background-color: #ccc7bc; /* The beige/light gray tone matching the shape */
-  border-radius: 60% 40% 45% 55% / 60% 54% 46% 40%;
+.about-value-img,
+.about-services-img {
+  background: url("./media/about_sections_bg.png") no-repeat center center/
+    cover;
+  padding: 2rem;
+  /* width: 300px;
+  height: 280px; */
+  /* The beige/light gray tone matching the shape */
+  /* background-color: #ccc7bc; */
+  /* border-radius: 60% 40% 45% 55% / 60% 54% 46% 40%; */
   /* The border-radius with four horizontal and four vertical percentages to create asymmetric smooth blob */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); */
 }
 .about-role-img img,
 .about-value-img img {
@@ -1726,11 +1738,6 @@ footer {
 }
 .about-services-list {
   flex: 1 1 60%;
-  min-width: 220px;
-  background: #fff;
-  border-radius: 1.2rem;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-  padding: 2rem 1.5rem;
   font-size: 1rem;
   animation: fadeIn 1.2s;
 }
@@ -1751,11 +1758,28 @@ footer {
   animation: fadeIn 1.2s;
 }
 .about-services-img img {
-  width: 170px;
-  height: 170px;
   object-fit: cover;
-  border-radius: 1.2rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 768px) {
+  .about-hero {
+    margin: 0;
+  }
+  .about-title {
+    font-size: 2.25rem;
+  }
+  .about-desc {
+    font-size: 1.75rem;
+  }
+  .about-hero-content {
+    padding: 0 1rem 0 8rem;
+  }
+  .about-preparing-content {
+    grid-template-columns: 1fr 1fr;
+  }
+  .about-section-title {
+    font-size: 2rem;
+  }
 }
 
 /* //////////////////////////////////////////////

@@ -7,95 +7,158 @@
     <title>VOYE ACADEMY</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Page Script -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./assets/styles.css">
 </head>
 
 <body>
     <!-- Header -->
     <header class="header">
-        <nav class="nav-container">
-            <a href="#" class="logo">VOYE</a>
-            
-            <ul class="nav-menu" id="navMenu">
-                <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
-                <li class="nav-item"><a href="categories.html" class="nav-link">Categories</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="fqa.html" class="nav-link">FQA</a></li>
-                
-            </ul>
-            <div class="nav-right">
-
-                <div class="lang_curr_dropdonws">
-                    <!-- Language Dropdown -->
-                    <div class="dropdown" id="languageDropdown">
-                        <button class="dropdown-trigger" onclick="toggleDropdown('languageDropdown')">
-                            <span id="selectedLanguage">EN</span>
-                            <span class="dropdown-arrow">
-                                <img src="./assets/media/dropdown-arrow.svg" alt="">
-                            </span>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item active" onclick="selectLanguage('EN', 'English')">English</a>
-                            <a href="#" class="dropdown-item" onclick="selectLanguage('AR', 'Arabic')">Arabic</a>
-                        </div>
-                    </div>
-    
-                    <!-- Currency Dropdown -->
-                    <div class="dropdown" id="currencyDropdown">
-                        <button class="dropdown-trigger" onclick="toggleDropdown('currencyDropdown')">
-                            <span id="selectedCurrency">($)USD</span>
-                            <span class="dropdown-arrow">
-                                <img src="./assets/media/dropdown-arrow.svg" alt="">
-                            </span>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item active" onclick="selectCurrency('($)USD', 'US Dollar')">($) USD</a>
-                            <a href="#" class="dropdown-item" onclick="selectCurrency('(€)EUR', 'Euro')">€ EUR</a>
-                        </div>
-                    </div>
+        <div class="container">
+            <nav class="nav-container">
+                <a href="#" class="logo">VOYE</a>
+                <div class="nav-menu" id="navMenu">
+                    <ul class="nav-menu-list w-full order-1">
+                        <li class="nav-item dropdown categories-dropdown" id="categoriesDropdown">
+                            <a href="#" class="nav-link dropdown-trigger"
+                                onclick="toggleDropdown('categoriesDropdown', event)">
+                                <span class="dropdown-title">Categories</span>
+                                <span class="dropdown-arrow">
+                                    <img src="./assets/media/dropdown-arrow.svg" alt="">
+                                </span>
+                            </a>
+                            <div class="dropdown-menu categories-menu">
+                                <div class="category-item">
+                                    <a href="#" class="category-link" onclick="toggleSubmenu(this)">
+                                        <!-- <span class="category-icon">💻</span> -->
+                                        <span>Technology</span>
+                                        <span class="submenu-arrow">
+                                            <img src="./assets/media/dropdown-arrow.svg" alt="">
+                                        </span>
+                                    </a>
+                                    <div class="submenu">
+                                        <a href="#" class="submenu-item">Web Development</a>
+                                        <a href="#" class="submenu-item">Mobile Apps</a>
+                                        <a href="#" class="submenu-item">Data Science</a>
+                                        <a href="#" class="submenu-item">AI & Machine Learning</a>
+                                    </div>
+                                </div>
+                                <div class="category-item">
+                                    <a href="#" class="category-link" onclick="toggleSubmenu(this)">
+                                        <!-- <span class="category-icon">🎨</span> -->
+                                        <span>Design</span>
+                                        <span class="submenu-arrow">
+                                            <img src="./assets/media/dropdown-arrow.svg" alt="">
+                                        </span>
+                                    </a>
+                                    <div class="submenu">
+                                        <a href="#" class="submenu-item">UI/UX Design</a>
+                                        <a href="#" class="submenu-item">Graphic Design</a>
+                                        <a href="#" class="submenu-item">3D Modeling</a>
+                                        <a href="#" class="submenu-item">Photography</a>
+                                    </div>
+                                </div>
+                                <div class="category-item">
+                                    <a href="#" class="category-link">
+                                        <!-- <span class="category-icon">💼</span> -->
+                                        <span>Business</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+                    </ul>
+                    <ul class="nav-language-currency w-full order-3 md:order-2">
+                        <!-- Language Dropdown -->
+                        <li class="nav-item dropdown" id="languageDropdown">
+                            <button class="nav-link dropdown-trigger"
+                                onclick="toggleDropdown('languageDropdown', event)">
+                                <span id="selectedLanguage">EN</span>
+                                <span class="dropdown-arrow">
+                                    <img src="./assets/media/dropdown-arrow.svg" alt="">
+                                </span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item active"
+                                    onclick="selectLanguage('EN', 'English')">English</a>
+                                <a href="#" class="dropdown-item" onclick="selectLanguage('AR', 'Arabic')">Arabic</a>
+                            </div>
+                        </li>
+                        <!-- Currency Dropdown -->
+                        <li class="nav-item dropdown" id="currencyDropdown">
+                            <button class="nav-link dropdown-trigger"
+                                onclick="toggleDropdown('currencyDropdown', event)">
+                                <span id="selectedCurrency">($)USD</span>
+                                <span class="dropdown-arrow">
+                                    <img src="./assets/media/dropdown-arrow.svg" alt="">
+                                </span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item active"
+                                    onclick="selectCurrency('($)USD', 'US Dollar')">($)
+                                    USD</a>
+                                <a href="#" class="dropdown-item" onclick="selectCurrency('(€)EUR', 'Euro')">€ EUR</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="nav-login-register w-full order-1 md:order-3">
+                        <li class="nav-item">
+                            <a href="login.html" class="nav-link register-link">Login</a>
+                        </li>
+                        <li class="auth-separate hidden md:block">/</li>
+                        <li class="nav-item">
+                            <a href="signup.html" class="nav-link register-link">Register</a>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="nav-right-links">
-                    <a href="#" class="register-link">Register</a>
-                    <span class="mx-1">/</span>
-                    <a href="#" class="register-link">How it works</a>
-                </div>
-
-            </div>
-
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()">
-                ☰
-            </button>
-        </nav>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()">
+                    ☰
+                </button>
+            </nav>
+        </div>
     </header>
 
-    <main class="about-main">
+    <main class="about-main p-0">
         <section class="about-hero">
             <div class="about-hero-bg">
-                <img src="./assets/media/about_who_we_are.png" alt="Who We Are">
+                <img src="./assets/media/about_who_we_are.png" class="w-full" alt="Who We Are">
             </div>
             <div class="about-hero-content">
                 <div class="about-hero-text">
                     <h2 class="about-title">WHO WE ARE</h2>
-                    <h3 class="about-subtitle">Empowering Excellence in Cosmetics and Medical Training</h3>
-                    <p class="about-desc">As a premier training provider, we are dedicated to delivering comprehensive, cutting-edge courses across the dynamic cosmetics and medical fields. Our core mission is to empower individuals with the essential knowledge and practical skills required to thrive in these evolving industries.</p>
+                    <p class="about-desc">
+                        Empowering Excellence in Cosmetics and Medical Training
+                        As a premier training provider, we are dedicated to delivering comprehensive, cutting-edge
+                        courses across the dynamic cosmetics and medical fields. See more
+                    </p>
                 </div>
                 <div class="about-hero-img">
                 </div>
             </div>
         </section>
 
+        <div class="">
+            <div class="container">
+                <h3 class="about-section-title">
+                    Preparing People to become Aestheticians
+                    <img src="./assets/media/under_signeture.svg" alt="">
+                </h3>
+            </div>
+        </div>
+
         <section class="about-section about-preparing">
-            <h3 class="about-section-title">Preparing People to become Aestheticians</h3>
             <div class="about-preparing-content">
                 <div class="about-role">
                     <h4>Our role</h4>
                     <ul>
                         <li>Empowering individuals: Providing the expertise needed to launch or advance careers.</li>
-                        <li>Elevating industry standards: Ensuring our graduates are highly competent and adhere to best practices.</li>
-                        <li>Fostering innovation: Keeping our curriculum current with emerging trends and technologies.</li>
+                        <li>Elevating industry standards: Ensuring our graduates are highly competent and adhere to best
+                            practices.</li>
+                        <li>Fostering innovation: Keeping our curriculum current with emerging trends and technologies.
+                        </li>
                     </ul>
                 </div>
                 <div class="about-role-img">
@@ -105,18 +168,21 @@
         </section>
 
         <section class="about-section about-preparing">
-            <h3 class="about-section-title">Preparing People to become Aestheticians</h3>
             <div class="about-preparing-content">
                 <div class="about-value-img">
-                    <img src="assets/media/blog-2.jpg" alt="Value">
+                    <img src="assets/media/about_our_value.svg" alt="Value">
                 </div>
                 <div class="about-value">
                     <h4>Our Value</h4>
                     <ul>
-                        <li>Expert Instructors: Our courses are led by experienced professionals and specialists in their respective fields.</li>
-                        <li>Practical, Hands-on Training: We emphasize real-world application, ensuring graduates are job-ready.</li>
-                        <li>Cutting-Edge Curriculum: Our programs are continuously updated to reflect the latest industry standards and scientific advancements.</li>
-                        <li>Career Advancement Opportunities: We help unlock new career paths and enhance earning potential.</li>
+                        <li>Expert Instructors: Our courses are led by experienced professionals and specialists in
+                            their respective fields.</li>
+                        <li>Practical, Hands-on Training: We emphasize real-world application, ensuring graduates are
+                            job-ready.</li>
+                        <li>Cutting-Edge Curriculum: Our programs are continuously updated to reflect the latest
+                            industry standards and scientific advancements.</li>
+                        <li>Career Advancement Opportunities: We help unlock new career paths and enhance earning
+                            potential.</li>
                     </ul>
                 </div>
             </div>
@@ -143,7 +209,7 @@
                     </ul>
                 </div>
                 <div class="about-services-img">
-                    <img src="assets/media/avatar-1.png" alt="Services">
+                    <img src="assets/media/about_our_service.svg" alt="Services">
                 </div>
             </div>
         </section>
@@ -161,7 +227,7 @@
         <div class="footer">
             <div class="container">
                 <div class="footer-content">
-    
+
                     <div class="footer-section">
                         <h4 class="footer-subtitle">How can we Help?</h4>
                         <ul class="footer-links">
@@ -172,7 +238,7 @@
                             <li><a href="#" class="footer-link">Blog</a></li>
                         </ul>
                     </div>
-    
+
                     <div class="footer-section">
                         <h4 class="footer-subtitle">Products</h4>
                         <ul class="footer-links">
@@ -194,16 +260,18 @@
                         <div class="check-terms">
                             <input type="checkbox" class="terms-checkbox" name="terms" id="terms">
                             <label for="terms-checkbox">
-                                By submitting your email, you agree to receive advertising emails from Beautya. Please review our Privacy Policy, which includes our Financial Incentive Notice for CA residents.
+                                By submitting your email, you agree to receive advertising emails from Beautya. Please
+                                review our Privacy Policy, which includes our Financial Incentive Notice for CA
+                                residents.
                             </label>
                         </div>
-                        
+
                     </div>
                 </div>
-                
+
             </div>
         </div>
-        
+
         <div class="footer-middle">
             <div class="container">
                 <div class="footer-contacts">
