@@ -1151,6 +1151,71 @@ section {
   text-decoration: underline;
 }
 
+.blog_banner{
+  background: url('./media/m-post-card-overlay.png') no-repeat center center/cover;
+  position: relative;
+  padding: 2rem;
+  height: 250px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: end;
+  border-radius: 1rem;
+}
+.blog_banner::after{
+  position: absolute;
+  content: '';
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  z-index: 1;
+}
+.blog_banner_content{
+  position: relative;
+  z-index: 2;
+}
+.blog_banner_content .blog-badge{
+  padding: .25rem 0.75rem;
+  color: white;
+  background: var(--primary);
+  border-radius: .25rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+.blog_banner_content .blog_banner_title{
+  color: white;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem ;
+}
+.blog_banner_content .short-info{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 100;
+}
+.blog_banner_content .short-info .blog-author{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
+@media (min-width: 768px) {
+  .blog_banner {
+    height: 450px;
+  }
+  .blog_banner_content {
+    max-width: 55%;
+  }
+  .blog_banner_content .blog_banner_title {
+    font-size: 2.5rem;
+  }
+
+}
 /* FAQ Section */
 .faq {
   position: relative;
@@ -1418,6 +1483,7 @@ footer {
   background-color: transparent;
   box-shadow: none;
   transition: var(--transition-smooth);
+  width: 30%;
 }
 .check-terms {
   display: block;
