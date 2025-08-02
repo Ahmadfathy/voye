@@ -49,6 +49,220 @@
             cursor: not-allowed;
             transform: none;
         }
+
+        /* Search and Filter Section Styles */
+        .search-filter-section {
+            padding: 5rem 0 0rem;
+            /* margin-bottom: 2rem; */
+        }
+
+        .search-filter-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        /* Search Heading */
+        .search-heading {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .search-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #374151;
+            line-height: 1.2;
+        }
+
+        .highlight {
+            color: var(--primary);
+        }
+
+        /* Search Bar */
+        .search-bar-container {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .search_btn {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: #FAFAFA;
+            border-radius: 0.075rem;
+            padding: 0.5rem;
+            flex: 1;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .categories-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.35rem 1.5rem;
+            border-radius: 0.25rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .categories-btn:hover {
+            background: hsl(18, 86%, 50%);
+            transform: translateY(-1px);
+        }
+
+        .search-input-wrapper {
+            position: relative;
+            flex: 1;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.35rem 3rem 0.35rem 1rem;
+            border: 1px solid transparent;
+            border-radius: 0.25rem;
+            font-size: 1rem;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            /* box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1); */
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #6b7280;
+            cursor: pointer;
+            padding: 0.25rem;
+            border-radius: 0.25rem;
+            transition: color 0.3s ease;
+        }
+
+        .search-btn:hover {
+            color: var(--primary);
+        }
+
+        .search-label {
+            color: #6b7280;
+            font-size: 0.875rem;
+            white-space: nowrap;
+        }
+
+        /* Filter Tabs */
+        .filter-tabs {
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .tabs-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding: 0.5rem 0;
+        }
+
+        .filter-tab {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: #f3f4f6;
+            border: none;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #374151;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .filter-tab:hover {
+            background: #e5e7eb;
+            transform: translateY(-1px);
+        }
+
+        .filter-tab.active {
+            background: #374151;
+            color: white;
+        }
+
+        .tab-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dropdown-tab {
+            padding: 0.75rem;
+            min-width: 40px;
+        }
+
+        .dropdown-tab svg {
+            color: #6b7280;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .search-title {
+                font-size: 2rem;
+            }
+            
+            .search-bar {
+                flex-direction: column;
+                gap: 0.75rem;
+                padding: 1rem;
+            }
+            
+            .search-label {
+                text-align: center;
+            }
+            
+            .tabs-container {
+                justify-content: flex-start;
+                padding-bottom: 0.5rem;
+            }
+            
+            .filter-tab {
+                font-size: 0.75rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .search-title {
+                font-size: 1.5rem;
+            }
+            
+            .search-bar {
+                padding: 0.75rem;
+            }
+            
+            .categories-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.75rem;
+            }
+        }
     </style>
 </head>
 
@@ -165,15 +379,77 @@
 
     <!-- Main Content -->
     <main class="main-content">
+        <!-- Search and Filter Section -->
+        <section class="search-filter-section">
+            <div class="container">
+                <div class="search-filter-container">
+                    <!-- Main Heading -->
+                    <div class="search-heading">
+                        <h1 class="search-title">
+                            Search among <span class="highlight">250</span> Courses and find your favorite course
+                        </h1>
+                    </div>
+
+                    <!-- Search Bar -->
+                    <div class="search-bar-container">
+                        <div class="search-bar">
+                            <div class="search_btn">
+                                <button class="categories-btn">
+                                    <span>Categories</span>
+                                </button>
+                                <div class="search-input-wrapper">
+                                    <input type="text" id="searchInput" class="search-input" placeholder="Search Anything">
+                                    <button class="search-btn" onclick="performSearch()">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="11" cy="11" r="8"></circle>
+                                            <path d="m21 21-4.35-4.35"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                            </div>
+                            <span class="search-label">Or View The Following Courses...</span>
+                        </div>
+                    </div>
+
+                    <!-- Filter Tabs -->
+                    <div class="filter-tabs">
+                        <div class="tabs-container">
+                            <button class="filter-tab" data-category="new" onclick="filterByCategory('new')">
+                                <span class="tab-dot"></span>
+                                <span>NEW COURSES</span>
+                            </button>
+                            <button class="filter-tab active" data-category="all" onclick="filterByCategory('all')">
+                                <span>All Courses</span>
+                            </button>
+                            <button class="filter-tab" data-category="foundational" onclick="filterByCategory('foundational')">
+                                <span>Foundational Knowledge</span>
+                            </button>
+                            <button class="filter-tab" data-category="core" onclick="filterByCategory('core')">
+                                <span>Core Aesthetic Treatments</span>
+                            </button>
+                            <button class="filter-tab" data-category="practical" onclick="filterByCategory('practical')">
+                                <span>Practical Training</span>
+                            </button>
+                            <button class="filter-tab" data-category="patient" onclick="filterByCategory('patient')">
+                                <span>Patient Management</span>
+                            </button>
+                            <button class="filter-tab dropdown-tab">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="6,9 12,15 18,9"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Courses Section -->
         <section class="courses">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Our Courses</h2>
-                </div>
-
                 <div class="all-courses courses-grid">
-                    <div class="course-card">
+                    <div class="course-card" data-category="foundational" data-title="Basic Makeup Techniques" data-description="Master the fundamentals of makeup application">
                         <div class="course-badge">Bestseller</div>
                         <img src="./assets/media/course-1.jpg" alt="Basic Makeup Course" class="course-image">
                         <div class="course-content">
@@ -205,7 +481,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="course-card">
+                    <div class="course-card" data-category="core" data-title="Bridal Makeup" data-description="Specialized bridal makeup techniques">
                         <img src="./assets/media/course-1.jpg" alt="Bridal Makeup Course" class="course-image">
                         <div class="course-content">
                             <h3 class="course-title">Bridal Makeup</h3>
@@ -220,7 +496,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="course-card">
+                    <div class="course-card" data-category="practical" data-title="Special Effects" data-description="Creative and theatrical makeup designs">
                         <img src="./assets/media/course-2.jpg" alt="Special Effects Course" class="course-image">
                         <div class="course-content">
                             <h3 class="course-title">Special Effects</h3>
@@ -235,7 +511,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="course-card">
+                    <div class="course-card" data-category="foundational" data-title="Basic Makeup Techniques" data-description="Master the fundamentals of makeup application">
                         <div class="course-badge">Bestseller</div>
                         <img src="./assets/media/course-1.jpg" alt="Basic Makeup Course" class="course-image">
                         <div class="course-content">
@@ -251,7 +527,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="course-card">
+                    <div class="course-card" data-category="new" data-title="Advanced Techniques" data-description="Professional level makeup artistry skills">
                         <div class="course-badge course-badge-new">New</div>
                         <img src="./assets/media/course-2.jpg" alt="Advanced Techniques Course" class="course-image">
                         <div class="course-content">
@@ -267,7 +543,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="course-card">
+                    <div class="course-card" data-category="core" data-title="Bridal Makeup" data-description="Specialized bridal makeup techniques">
                         <img src="./assets/media/course-1.jpg" alt="Bridal Makeup Course" class="course-image">
                         <div class="course-content">
                             <h3 class="course-title">Bridal Makeup</h3>
@@ -282,7 +558,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="course-card">
+                    <div class="course-card" data-category="practical" data-title="Special Effects" data-description="Creative and theatrical makeup designs">
                         <img src="./assets/media/course-2.jpg" alt="Special Effects Course" class="course-image">
                         <div class="course-content">
                             <h3 class="course-title">Special Effects</h3>
@@ -426,11 +702,106 @@
     <script src="./assets/script.js"></script>
 
     <script>
-        // Load more functionality
+        // Search and Filter functionality
+        let currentSearchTerm = '';
+        let currentCategory = 'all';
         let currentVisibleCards = 6;
         const totalCards = 16;
         const cardsPerLoad = 6;
         let isLoading = false;
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add event listener for search input
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', function() {
+                currentSearchTerm = this.value.toLowerCase();
+                applyFilters();
+            });
+
+            // Add event listener for Enter key on search
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+
+            // Initialize the page
+            updateResultsCount();
+        });
+
+        // Perform search function
+        function performSearch() {
+            const searchInput = document.getElementById('searchInput');
+            currentSearchTerm = searchInput.value.toLowerCase();
+            applyFilters();
+        }
+
+        // Filter by category
+        function filterByCategory(category) {
+            currentCategory = category;
+            
+            // Update active tab
+            const tabs = document.querySelectorAll('.filter-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.getAttribute('data-category') === category) {
+                    tab.classList.add('active');
+                }
+            });
+            
+            applyFilters();
+        }
+
+        // Apply all filters
+        function applyFilters() {
+            const courseCards = document.querySelectorAll('.course-card');
+            let visibleCount = 0;
+
+            courseCards.forEach(card => {
+                let shouldShow = true;
+
+                // Category filter
+                if (currentCategory !== 'all') {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (cardCategory !== currentCategory) {
+                        shouldShow = false;
+                    }
+                }
+
+                // Search filter
+                if (currentSearchTerm && shouldShow) {
+                    const title = card.getAttribute('data-title').toLowerCase();
+                    const description = card.getAttribute('data-description').toLowerCase();
+                    if (!title.includes(currentSearchTerm) && !description.includes(currentSearchTerm)) {
+                        shouldShow = false;
+                    }
+                }
+
+                // Show/hide card
+                if (shouldShow) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Update results count
+            updateResultsCount(visibleCount);
+        }
+
+        // Update results count
+        function updateResultsCount(count) {
+            const totalCards = document.querySelectorAll('.course-card').length;
+            const visibleCards = document.querySelectorAll('.course-card[style="display: block"], .course-card:not([style*="display: none"])').length;
+
+            if (count !== undefined) {
+                console.log(`Showing ${count} of ${totalCards} courses`);
+            } else {
+                console.log(`Showing ${visibleCards} of ${totalCards} courses`);
+            }
+        }
 
         // Load more blogs function
         function loadMoreBlogs() {
