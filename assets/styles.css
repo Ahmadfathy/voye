@@ -1644,6 +1644,9 @@ footer {
 }
 
 /* Courses Swiper Styles */
+.swiper-horizontal {
+  padding-bottom: 4rem;
+}
 .swiper-pagination-bullet {
   background: var(--background-hero);
   opacity: 0.6;
