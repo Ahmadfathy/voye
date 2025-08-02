@@ -123,8 +123,13 @@
     <!-- Main Content -->
     <main class="main-content">
         <section class="login-wrapper">
+
             <div class="image-section">
-                <img src="./assets/media/signup_img.png" alt="Wellness" class="hero-image">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="./assets/media/signup_img_sm.png">
+                    <source media="(min-width: 769px)" srcset="./assets/media/signup_img.png">
+                    <img src="./assets/media/signup_img.png" alt="Wellness" class="hero-image desktop-image">
+                </picture>
             </div>
             
             <div class="form-section">
@@ -211,6 +216,7 @@
                     </div>
                 </div>
             </div>
+
         </section>
     </main>
 
