@@ -7,6 +7,49 @@
     <title>VOYE ACADEMY</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="./assets/styles.css">
+    <style>
+        /* Hide blog cards after the first 6 */
+        .course-card:nth-child(n+7) {
+            display: none;
+        }
+        
+        /* Load more button styles */
+        .load-more-container {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            font-size: 0.875rem;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: hsl(18, 86%, 50%);
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,11 +57,12 @@
     <header class="header">
         <div class="container">
             <nav class="nav-container">
-                <a href="#" class="logo">VOYE</a>
+                <a href="index.html" class="logo">VOYE</a>
                 <div class="nav-menu" id="navMenu">
                     <ul class="nav-menu-list w-full order-1">
                         <li class="nav-item dropdown categories-dropdown" id="categoriesDropdown">
-                            <a href="#" class="nav-link dropdown-trigger" onclick="toggleDropdown('categoriesDropdown', event)">
+                            <a href="#" class="nav-link dropdown-trigger"
+                                onclick="toggleDropdown('categoriesDropdown', event)">
                                 <span class="dropdown-title">Categories</span>
                                 <span class="dropdown-arrow">
                                     <img src="./assets/media/dropdown-arrow.svg" alt="">
@@ -71,27 +115,31 @@
                     <ul class="nav-language-currency w-full order-3 md:order-2">
                         <!-- Language Dropdown -->
                         <li class="nav-item dropdown" id="languageDropdown">
-                            <button class="nav-link dropdown-trigger" onclick="toggleDropdown('languageDropdown', event)">
+                            <button class="nav-link dropdown-trigger"
+                                onclick="toggleDropdown('languageDropdown', event)">
                                 <span id="selectedLanguage">EN</span>
                                 <span class="dropdown-arrow">
                                     <img src="./assets/media/dropdown-arrow.svg" alt="">
                                 </span>
                             </button>
                             <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item active" onclick="selectLanguage('EN', 'English')">English</a>
+                                <a href="#" class="dropdown-item active"
+                                    onclick="selectLanguage('EN', 'English')">English</a>
                                 <a href="#" class="dropdown-item" onclick="selectLanguage('AR', 'Arabic')">Arabic</a>
                             </div>
                         </li>
                         <!-- Currency Dropdown -->
                         <li class="nav-item dropdown" id="currencyDropdown">
-                            <button class="nav-link dropdown-trigger" onclick="toggleDropdown('currencyDropdown', event)">
+                            <button class="nav-link dropdown-trigger"
+                                onclick="toggleDropdown('currencyDropdown', event)">
                                 <span id="selectedCurrency">($)USD</span>
                                 <span class="dropdown-arrow">
                                     <img src="./assets/media/dropdown-arrow.svg" alt="">
                                 </span>
                             </button>
                             <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item active" onclick="selectCurrency('($)USD', 'US Dollar')">($)
+                                <a href="#" class="dropdown-item active"
+                                    onclick="selectCurrency('($)USD', 'US Dollar')">($)
                                     USD</a>
                                 <a href="#" class="dropdown-item" onclick="selectCurrency('(€)EUR', 'Euro')">€ EUR</a>
                             </div>
@@ -107,7 +155,7 @@
                         </li>
                     </ul>
                 </div>
-    
+
                 <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()">
                     ☰
                 </button>
@@ -117,7 +165,149 @@
 
     <!-- Main Content -->
     <main class="main-content">
-      
+        <!-- Courses Section -->
+        <section class="courses">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Courses</h2>
+                </div>
+
+                <div class="all-courses courses-grid">
+                    <div class="course-card">
+                        <div class="course-badge">Bestseller</div>
+                        <img src="./assets/media/course-1.jpg" alt="Basic Makeup Course" class="course-image">
+                        <div class="course-content">
+                            <h3 class="course-title">Basic Makeup Techniques</h3>
+                            <p class="course-description">Master the fundamentals of makeup application</p>
+                            <div class="course-price">
+                                <span class="price">$99</span>
+                                <span class="price-old">$149</span>
+                            </div>
+                            <a href="course_details.html" class="btn btn-primary course-btn">
+                                <span>View More</span>
+                                <span class="arrow-icon">→</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-badge course-badge-new">New</div>
+                        <img src="./assets/media/course-2.jpg" alt="Advanced Techniques Course" class="course-image">
+                        <div class="course-content">
+                            <h3 class="course-title">Advanced Techniques</h3>
+                            <p class="course-description">Professional level makeup artistry skills</p>
+                            <div class="course-price">
+                                <span class="price">$199</span>
+                                <span class="price-old">$299</span>
+                            </div>
+                            <a href="course_details.html" class="btn btn-primary course-btn">
+                                <span>View More</span>
+                                <span class="arrow-icon">→</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="./assets/media/course-1.jpg" alt="Bridal Makeup Course" class="course-image">
+                        <div class="course-content">
+                            <h3 class="course-title">Bridal Makeup</h3>
+                            <p class="course-description">Specialized bridal makeup techniques</p>
+                            <div class="course-price">
+                                <span class="price">$249</span>
+                                <span class="price-old">$349</span>
+                            </div>
+                            <a href="course_details.html" class="btn btn-primary course-btn">
+                                <span>View More</span>
+                                <span class="arrow-icon">→</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="./assets/media/course-2.jpg" alt="Special Effects Course" class="course-image">
+                        <div class="course-content">
+                            <h3 class="course-title">Special Effects</h3>
+                            <p class="course-description">Creative and theatrical makeup designs</p>
+                            <div class="course-price">
+                                <span class="price">$299</span>
+                                <span class="price-old">$399</span>
+                            </div>
+                            <a href="course_details.html" class="btn btn-primary course-btn">
+                                <span>View More</span>
+                                <span class="arrow-icon">→</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-badge">Bestseller</div>
+                        <img src="./assets/media/course-1.jpg" alt="Basic Makeup Course" class="course-image">
+                        <div class="course-content">
+                            <h3 class="course-title">Basic Makeup Techniques</h3>
+                            <p class="course-description">Master the fundamentals of makeup application</p>
+                            <div class="course-price">
+                                <span class="price">$99</span>
+                                <span class="price-old">$149</span>
+                            </div>
+                            <a href="course_details.html" class="btn btn-primary course-btn">
+                                <span>View More</span>
+                                <span class="arrow-icon">→</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-badge course-badge-new">New</div>
+                        <img src="./assets/media/course-2.jpg" alt="Advanced Techniques Course" class="course-image">
+                        <div class="course-content">
+                            <h3 class="course-title">Advanced Techniques</h3>
+                            <p class="course-description">Professional level makeup artistry skills</p>
+                            <div class="course-price">
+                                <span class="price">$199</span>
+                                <span class="price-old">$299</span>
+                            </div>
+                            <a href="course_details.html" class="btn btn-primary course-btn">
+                                <span>View More</span>
+                                <span class="arrow-icon">→</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="./assets/media/course-1.jpg" alt="Bridal Makeup Course" class="course-image">
+                        <div class="course-content">
+                            <h3 class="course-title">Bridal Makeup</h3>
+                            <p class="course-description">Specialized bridal makeup techniques</p>
+                            <div class="course-price">
+                                <span class="price">$249</span>
+                                <span class="price-old">$349</span>
+                            </div>
+                            <a href="course_details.html" class="btn btn-primary course-btn">
+                                <span>View More</span>
+                                <span class="arrow-icon">→</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="./assets/media/course-2.jpg" alt="Special Effects Course" class="course-image">
+                        <div class="course-content">
+                            <h3 class="course-title">Special Effects</h3>
+                            <p class="course-description">Creative and theatrical makeup designs</p>
+                            <div class="course-price">
+                                <span class="price">$299</span>
+                                <span class="price-old">$399</span>
+                            </div>
+                            <a href="course_details.html" class="btn btn-primary course-btn">
+                                <span>View More</span>
+                                <span class="arrow-icon">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="load-more-container">
+                    <button class="btn btn-primary" id="loadMoreBtn" onclick="loadMoreBlogs()">
+                        <span>View More</span>
+                        <span>↓</span>
+                    </button>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -234,6 +424,54 @@
     </footer>
 
     <script src="./assets/script.js"></script>
+
+    <script>
+        // Load more functionality
+        let currentVisibleCards = 6;
+        const totalCards = 16;
+        const cardsPerLoad = 6;
+        let isLoading = false;
+
+        // Load more blogs function
+        function loadMoreBlogs() {
+            if (isLoading) return;
+
+            isLoading = true;
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            
+            // Disable button and show loading state
+            loadMoreBtn.disabled = true;
+            loadMoreBtn.innerHTML = '<span>Loading...</span>';
+
+            // Simulate API call delay
+            setTimeout(() => {
+                // Show next 6 cards
+                const nextBatchStart = currentVisibleCards + 1;
+                const nextBatchEnd = Math.min(currentVisibleCards + cardsPerLoad, totalCards);
+                
+                // Show the next batch of cards
+                for (let i = nextBatchStart; i <= nextBatchEnd; i++) {
+                    const card = document.querySelector(`.course-card:nth-child(${i})`);
+                    if (card) {
+                        card.style.display = 'block';
+                    }
+                }
+                
+                currentVisibleCards = nextBatchEnd;
+                
+                // Hide button if all cards are shown
+                if (currentVisibleCards >= totalCards) {
+                    loadMoreBtn.style.display = 'none';
+                } else {
+                    // Re-enable button
+                    loadMoreBtn.disabled = false;
+                    loadMoreBtn.innerHTML = '<span>View More</span><span>↓</span>';
+                }
+                
+                isLoading = false;
+            }, 800);
+        }
+    </script>
 
 </body>
 
