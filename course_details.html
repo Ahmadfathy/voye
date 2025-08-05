@@ -12,13 +12,16 @@
         .card-shadow {
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
+
         .play-button {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
         }
+
         .avatar-overlap {
             margin-left: -8px;
         }
+
         .avatar-overlap:first-child {
             margin-left: 0;
         }
@@ -140,112 +143,18 @@
     <main class="main-content">
         <div class="makeup-course-page">
 
-            <section class="hero-section-makeup">
-
-                <div class="max-w-4xl mx-auto px-4 py-8">
-                    <!-- Hero Section -->
-                    <div class="text-center mb-12">
-                        <h1 class="text-4xl md:text-5xl font-bold text-orange mb-6">
-                            Your Guide to Makeup<br>
-                            <span class="text-orange">Essentials</span>
-                        </h1>
-                        
-                        <p class="text-dark-gray text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-                            Transform your aesthetic services with Aesthetic Flow. Explore expertly crafted treatment pathways and start creating beautiful patient transformations today
-                        </p>
-                        
-                        <button class="bg-orange text-white font-bold py-4 px-8 rounded-lg text-lg hover:bg-orange/90 transition-colors mb-6">
-                            Get Started
-                        </button>
-                        
-                        <!-- Social Proof -->
-                        <div class="flex items-center justify-center space-x-3 mb-8">
-                            <div class="flex -space-x-2">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" 
-                                    alt="Student 1" 
-                                    class="w-10 h-10 rounded-full border-2 border-white avatar-overlap">
-                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" 
-                                    alt="Student 2" 
-                                    class="w-10 h-10 rounded-full border-2 border-white avatar-overlap">
-                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop&crop=face" 
-                                    alt="Student 3" 
-                                    class="w-10 h-10 rounded-full border-2 border-white avatar-overlap">
-                            </div>
-                            <span class="text-dark-gray">
-                                Join over <span class="text-orange font-bold">4,000+</span> students
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Video Section -->
-                    <div class="bg-white rounded-xl card-shadow p-6 mb-8">
-                        <div class="relative">
-                            <img src="./assets/media/course_details.png" 
-                                alt="Facial treatment demonstration" 
-                                class="w-full h-64 object-cover rounded-lg">
-                            <button class="absolute inset-0 flex items-center justify-center play-button rounded-lg" 
-                                    onclick="playVideo()">
-                                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-                                    <div class="w-0 h-0 border-l-[12px] border-l-dark-gray border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1"></div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Course Details Section -->
-                    <div class="bg-white rounded-xl card-shadow p-6">
-                        <h2 class="text-orange font-bold text-xl mb-6">This Course Includes :</h2>
-                        
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-center text-dark-gray">
-                                <span class="w-2 h-2 bg-dark-gray rounded-full mr-3"></span>
-                                Hours on-demand videos
-                            </li>
-                            <li class="flex items-center text-dark-gray">
-                                <span class="w-2 h-2 bg-dark-gray rounded-full mr-3"></span>
-                                3 study materials
-                            </li>
-                            <li class="flex items-center text-dark-gray">
-                                <span class="w-2 h-2 bg-dark-gray rounded-full mr-3"></span>
-                                Full lifetime access
-                            </li>
-                            <li class="flex items-center text-dark-gray">
-                                <span class="w-2 h-2 bg-dark-gray rounded-full mr-3"></span>
-                                Certificate of completion
-                            </li>
-                        </ul>
-                        
-                        <!-- Pricing -->
-                        <div class="flex items-center justify-between mb-6">
-                            <div class="flex items-center space-x-3">
-                                <span class="text-dark-gray">Price :</span>
-                                <span class="text-dark-gray font-bold text-2xl">$299,00</span>
-                                <span class="text-light-gray line-through">$399,00</span>
-                                <span class="text-light-gray">- 30% off</span>
-                            </div>
-                        </div>
-                        
-                        <button class="w-full bg-orange text-white font-bold py-4 px-8 rounded-lg text-lg hover:bg-orange/90 transition-colors flex items-center justify-center space-x-2">
-                            <span>Get Started</span>
-                            <span class="text-xl">→</span>
-                        </button>
-                    </div>
-                </div>
-                
-            </section>
-
             <section class="stats-section">
                 <div class="stats-container">
                     <div class="stat-item">
-                        <h3>12,201</h3>
+                        <h3 class="stat-counter" data-target="12201">0</h3>
                         <p>Happy students</p>
                     </div>
                     <div class="stat-item">
-                        <h3>3,291</h3>
+                        <h3 class="stat-counter" data-target="3291">0</h3>
                         <p>Course completed</p>
                     </div>
                     <div class="stat-item">
-                        <h3>1,291</h3>
+                        <h3 class="stat-counter" data-target="1291">0</h3>
                         <p>Community experts</p>
                     </div>
                 </div>
@@ -316,7 +225,8 @@
                         <div class="instructor-text">
                             <h2>Hi, I am Elina, your course instructor.</h2>
                             <p>
-                                Transform your aesthetic services with Aesthetic Flow. Explore expertly crafted treatment pathways and start creating beautiful patient transformations today.
+                                Transform your aesthetic services with Aesthetic Flow. Explore expertly crafted
+                                treatment pathways and start creating beautiful patient transformations today.
                             </p>
                         </div>
                         <div class="instructor-image">
@@ -558,24 +468,25 @@
                                 <li>Be ready to build a loyal client base</li>
                             </ul>
                         </div>
-    
+
                         <!-- FAQ Section -->
                         <div class="section">
                             <h2 class="section-title">FAQ</h2>
-    
+
                             <div class="faq-item-1">
                                 <div class="faq-question-1" onclick="toggleFAQ(this)">
                                     <span>What is the course level?</span>
                                     <span class="faq-arrow">
-                                        <img src="./assets/media/dropdown-arrow.svg" alt=""> 
+                                        <img src="./assets/media/dropdown-arrow.svg" alt="">
                                     </span>
                                 </div>
                                 <div class="faq-answer-1">
-                                    <p>This course is designed for intermediate to advanced practitioners who want to master
+                                    <p>This course is designed for intermediate to advanced practitioners who want to
+                                        master
                                         aesthetic procedures and build a successful practice.</p>
                                 </div>
                             </div>
-    
+
                             <div class="faq-item-1">
                                 <div class="faq-question-1" onclick="toggleFAQ(this)">
                                     <span>Is it a supported course?</span>
@@ -584,11 +495,12 @@
                                     </span>
                                 </div>
                                 <div class="faq-answer-1">
-                                    <p>Yes, this course includes comprehensive support including instructor guidance, peer
+                                    <p>Yes, this course includes comprehensive support including instructor guidance,
+                                        peer
                                         community access, and ongoing resources.</p>
                                 </div>
                             </div>
-    
+
                             <div class="faq-item-1">
                                 <div class="faq-question-1" onclick="toggleFAQ(this)">
                                     <span>Can I have a private meeting with the instructor?</span>
@@ -603,15 +515,16 @@
                                 </div>
                             </div>
                         </div>
-    
+
                         <!-- Suggested by top companies -->
                         <div class="section">
                             <div class="companies-container">
                                 <h3>
                                     Suggested by top companies
                                 </h3>
-                                <p class="companies-text">Top companies suggest this course to their employees and staff</p>
-    
+                                <p class="companies-text">Top companies suggest this course to their employees and staff
+                                </p>
+
                                 <div class="companies-grid">
                                     <div class="company-logo">
                                         <span class="company-text">ДЗЕН</span>
@@ -628,7 +541,7 @@
                                 </div>
                             </div>
                         </div>
-    
+
                         <!-- Comments Section -->
                         <div class="section">
                             <h2 class="section-title">Comments <span class="comments-count">(0)</span></h2>
@@ -787,13 +700,13 @@
             const faqItem = element.parentElement;
             const answer = faqItem.querySelector('.faq-answer-1');
             const isActive = faqItem.classList.contains('active');
-            
+
             // Close all other FAQ items
             document.querySelectorAll('.faq-item-1').forEach(item => {
                 item.classList.remove('active');
                 item.querySelector('.faq-answer-1').classList.remove('active');
             });
-            
+
             // Toggle current item
             if (!isActive) {
                 faqItem.classList.add('active');
@@ -804,16 +717,16 @@
         function postComment() {
             const commentText = document.getElementById('commentText');
             const text = commentText.value.trim();
-            
+
             if (text === '') {
                 alert('Please enter a comment before posting.');
                 return;
             }
-            
+
             // Here you would normally send the comment to a server
             alert('Comment posted successfully!');
             commentText.value = '';
-            
+
             // Update comment count
             const countElement = document.querySelector('.comments-count');
             const currentCount = parseInt(countElement.textContent.match(/\d+/)[0]);
@@ -821,7 +734,7 @@
         }
 
         // Close FAQ when clicking outside
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             if (!event.target.closest('.faq-item')) {
                 document.querySelectorAll('.faq-item').forEach(item => {
                     item.classList.remove('active');
@@ -832,6 +745,29 @@
     </script>
 
     <script src="./assets/script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const counters = document.querySelectorAll('.stat-counter');
+            const speed = 200; // lower is faster
+
+            counters.forEach(counter => {
+                const animate = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText.replace(/,/g, '');
+                    const increment = Math.max(1, Math.ceil(target / speed));
+
+                    if (count < target) {
+                        counter.innerText = (count + increment).toLocaleString();
+                        setTimeout(animate, 10);
+                    } else {
+                        counter.innerText = target.toLocaleString();
+                    }
+                };
+                animate();
+            });
+        });
+    </script>
 
 </body>
 
