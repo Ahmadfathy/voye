@@ -2783,9 +2783,11 @@ footer {
 }
 .course_details_intro h1{
   margin-bottom: 1.5rem;
+  color: var(--primary);
 }
 .course_details_intro p{
   margin-bottom: 1.5rem;
+  color: #77685B;
 }
 .course_details_intro button{
   padding: .75rem 3rem;
