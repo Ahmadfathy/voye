@@ -5,27 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VOYE ACADEMY</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./assets/styles.css">
-    <style>
-        .card-shadow {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-        .play-button {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-        }
-
-        .avatar-overlap {
-            margin-left: -8px;
-        }
-
-        .avatar-overlap:first-child {
-            margin-left: 0;
-        }
-    </style>
 </head>
 
 <body>
@@ -141,9 +124,100 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="makeup-course-page">
 
-            <section class="stats-section">
+        <section class="course_details">
+
+            <div class="course_details_intro">
+                <h1 class="text-3xl font-bold text-primary mb-4">
+                    Your Guide to Makeup Essentials
+                </h1>
+                <p class="text-muted-foreground mb-6 leading-relaxed">
+                    Transform your aesthetic services with Aesthetic Flow. Explore expertly
+                    crafted treatment pathways and start creating beautiful patient
+                    transformations today.
+                </p>
+                <button class="">Get Started</button>
+            </div>
+
+            <!-- Video Section -->
+            <div class="video_block">
+                <img src="assets/media/course_details.png" alt="Makeup tutorial" class="cover" />
+                <button class="">
+                    <img src="./assets/media/play.svg" alt="">
+                </button>
+            </div>
+
+            <!-- Course Details -->
+            <div class="course_includes">
+                <h2 class="text-xl font-bold text-primary mb-4">This Course Includes :</h2>
+
+                <ul>
+                    <li>Hours on demand videos</li>
+                    <li>Full lifetime access</li>
+                    <li>3 study materials</li>
+                    <li>Certificate of completion</li>
+                </ul>
+
+                <div class="flex justify-between items-baseline gap-2 mb-2 pricing">
+                    <span class="text-3xl font-bold">Price: <strong>$299.00</strong></span>
+                    <span class="text-lg line-through">$399.00</span>
+                    <span class="text-md">30% off</span>
+                </div>
+
+                <button class="get_started">
+                    Get Started →
+                </button>
+
+                <div class="students-reviews">
+                    <div class="students-avatars">
+                        <div class="student-avatar">
+                            <img src="./assets/media/person-1.png" alt="">
+                        </div>
+                        <div class="student-avatar">
+                            <img src="./assets/media/person-1.png" alt="">
+                        </div>
+                        <div class="student-avatar">
+                            <img src="./assets/media/person-1.png" alt="">
+                        </div>
+                    </div>
+                    <span class="">Join over <b>4,000+</b> students</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- About Section -->
+        <section class="about_course_details">
+            <div class="container">
+                <div class="about_course_discribe">
+                    <div class="about_course_title">
+                        <h2 class="">About this course</h2>
+                        <span class="line"></span>
+                    </div>
+                    <div class="about_course_discribes">
+                        <p>
+                            <strong>VOYE</strong> is an online course Marketplace with a pile of features that helps
+                            you to run your aestheticians career easily.
+                        </p>
+                        <p>
+                            This product helps instructors and students to get in touch together and share
+                            knowledge. Instructors will be able to make
+                            unlimited video courses, live classes, text courses, projects, quizzes, files, etc and
+                            students will be able to use the educational
+                            material and increase their skill level.
+                        </p>
+                        <p>
+                            <strong>VOYE</strong> based on real business needs, cultural differences, advanced user
+                            researches so the product covers your business
+                            requirements efficiently.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="container">
                 <div class="stats-container">
                     <div class="stat-item">
                         <h3 class="stat-counter" data-target="12201">0</h3>
@@ -158,10 +232,12 @@
                         <p>Community experts</p>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="learning-section">
+        <section class="learning-section">
 
+            <div class="container">
                 <div class="w-full max-w-3xl mx-auto">
                     <div class="section-header">
                         <h2 class="section-title">What you'll learn</h2>
@@ -217,343 +293,343 @@
                         <button class="module-btn rounded-full">3 Lessons</button>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="instructor-section">
-                <div class="container">
-                    <div class="instructor-content">
-                        <div class="instructor-text">
-                            <h2>Hi, I am Elina, your course instructor.</h2>
-                            <p>
-                                Transform your aesthetic services with Aesthetic Flow. Explore expertly crafted
-                                treatment pathways and start creating beautiful patient transformations today.
-                            </p>
-                        </div>
-                        <div class="instructor-image">
-                            <img src="./assets/media/Instructor.png" alt="Elina - Course Instructor" />
-                        </div>
+        <section class="instructor-section">
+            <div class="container">
+                <div class="instructor-content">
+                    <div class="instructor-text">
+                        <h2>Hi, I am Elina, your course instructor.</h2>
+                        <p>
+                            Transform your aesthetic services with Aesthetic Flow. Explore expertly crafted
+                            treatment pathways and start creating beautiful patient transformations today.
+                        </p>
+                    </div>
+                    <div class="instructor-image">
+                        <img src="./assets/media/Instructor.png" alt="Elina - Course Instructor" />
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Reviews Section -->
-            <section class="reviews">
-                <div class="container">
-                    <div class="section-header">
-                        <p class="section-description">Testimonials</p>
-                        <h2 class="section-title">Our Customers Reviews</h2>
-                    </div>
-
-                    <div class="reviews-grid">
-                        <div id="reviewsSwiper" class="courses-grid swiper mySwiper">
-                            <div class="swiper-wrapper">
-
-                                <div class="swiper-slide">
-                                    <div class="review-card">
-                                        <div class="stars">
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star">★</span>
-                                        </div>
-                                        <p class="review-text">"The courses are incredibly detailed and the instructors
-                                            are
-                                            amazing. I've
-                                            learned so much!"</p>
-                                        <div class="reviewer">
-                                            <div class="reviewer-avatar">
-                                                <img src="./assets/media/avatar-1.png" alt="">
-                                            </div>
-                                            <div class="reviewer-info">
-                                                <h4 class="reviewer-name">Sarah Johnson</h4>
-                                                <p class="reviewer-title">Makeup Artist</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="review-card">
-                                        <div class="stars">
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                        </div>
-                                        <p class="review-text">"Perfect for beginners! The step-by-step approach made
-                                            everything
-                                            so easy to
-                                            follow."</p>
-                                        <div class="reviewer">
-                                            <div class="reviewer-avatar">
-                                                <img src="./assets/media/avatar-1.png" alt="">
-                                            </div>
-                                            <div class="reviewer-info">
-                                                <h4 class="reviewer-name">Maria Garcia</h4>
-                                                <p class="reviewer-title">Beauty Enthusiast</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="review-card">
-                                        <div class="stars">
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                        </div>
-                                        <p class="review-text">"Perfect for beginners! The step-by-step approach made
-                                            everything
-                                            so easy to
-                                            follow."</p>
-                                        <div class="reviewer">
-                                            <div class="reviewer-avatar">
-                                                <img src="./assets/media/avatar-1.png" alt="">
-                                            </div>
-                                            <div class="reviewer-info">
-                                                <h4 class="reviewer-name">Maria Garcia</h4>
-                                                <p class="reviewer-title">Beauty Enthusiast</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="review-card">
-                                        <div class="stars">
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                        </div>
-                                        <p class="review-text">"Professional quality courses that really help you
-                                            develop real
-                                            skills.
-                                            Highly recommended!"</p>
-                                        <div class="reviewer">
-                                            <div class="reviewer-avatar">
-                                                <img src="./assets/media/avatar-1.png" alt="">
-                                            </div>
-                                            <div class="reviewer-info">
-                                                <h4 class="reviewer-name">Emily Chen</h4>
-                                                <p class="reviewer-title">Professional MUA</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="review-card">
-                                        <div class="stars">
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star">★</span>
-                                        </div>
-                                        <p class="review-text">"The courses are incredibly detailed and the instructors
-                                            are
-                                            amazing. I've
-                                            learned so much!"</p>
-                                        <div class="reviewer">
-                                            <div class="reviewer-avatar">
-                                                <img src="./assets/media/avatar-1.png" alt="">
-                                            </div>
-                                            <div class="reviewer-info">
-                                                <h4 class="reviewer-name">Sarah Johnson</h4>
-                                                <p class="reviewer-title">Makeup Artist</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="review-card">
-                                        <div class="stars">
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                        </div>
-                                        <p class="review-text">"Perfect for beginners! The step-by-step approach made
-                                            everything
-                                            so easy to
-                                            follow."</p>
-                                        <div class="reviewer">
-                                            <div class="reviewer-avatar">
-                                                <img src="./assets/media/avatar-1.png" alt="">
-                                            </div>
-                                            <div class="reviewer-info">
-                                                <h4 class="reviewer-name">Maria Garcia</h4>
-                                                <p class="reviewer-title">Beauty Enthusiast</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="review-card">
-                                        <div class="stars">
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                        </div>
-                                        <p class="review-text">"Perfect for beginners! The step-by-step approach made
-                                            everything
-                                            so easy to
-                                            follow."</p>
-                                        <div class="reviewer">
-                                            <div class="reviewer-avatar">
-                                                <img src="./assets/media/avatar-1.png" alt="">
-                                            </div>
-                                            <div class="reviewer-info">
-                                                <h4 class="reviewer-name">Maria Garcia</h4>
-                                                <p class="reviewer-title">Beauty Enthusiast</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="review-card">
-                                        <div class="stars">
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                            <span class="star rated">★</span>
-                                        </div>
-                                        <p class="review-text">"Professional quality courses that really help you
-                                            develop real
-                                            skills.
-                                            Highly recommended!"</p>
-                                        <div class="reviewer">
-                                            <div class="reviewer-avatar">
-                                                <img src="./assets/media/avatar-1.png" alt="">
-                                            </div>
-                                            <div class="reviewer-info">
-                                                <h4 class="reviewer-name">Emily Chen</h4>
-                                                <p class="reviewer-title">Professional MUA</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-
-                    </div>
+        <!-- Reviews Section -->
+        <section class="reviews">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-description">Testimonials</p>
+                    <h2 class="section-title">Our Customers Reviews</h2>
                 </div>
-            </section>
 
-            <section class="faq-comments">
-                <div class="container">
-                    <div class="w-full max-w-3xl relative z-3">
-                        <!-- Requirements Section -->
-                        <div class="section">
-                            <h2 class="section-title">Requirements</h2>
-                            <ul class="requirements-list">
-                                <li>Prepare to master real aesthetic procedures</li>
-                                <li>Be ready to learn an insane amount of awesome stuff</li>
-                                <li>Be ready to build a loyal client base</li>
-                            </ul>
+                <div class="reviews-grid">
+                    <div id="reviewsSwiper" class="courses-grid swiper mySwiper">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+                                <div class="review-card">
+                                    <div class="stars">
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                    <p class="review-text">"The courses are incredibly detailed and the instructors
+                                        are
+                                        amazing. I've
+                                        learned so much!"</p>
+                                    <div class="reviewer">
+                                        <div class="reviewer-avatar">
+                                            <img src="./assets/media/avatar-1.png" alt="">
+                                        </div>
+                                        <div class="reviewer-info">
+                                            <h4 class="reviewer-name">Sarah Johnson</h4>
+                                            <p class="reviewer-title">Makeup Artist</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="review-card">
+                                    <div class="stars">
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                    </div>
+                                    <p class="review-text">"Perfect for beginners! The step-by-step approach made
+                                        everything
+                                        so easy to
+                                        follow."</p>
+                                    <div class="reviewer">
+                                        <div class="reviewer-avatar">
+                                            <img src="./assets/media/avatar-1.png" alt="">
+                                        </div>
+                                        <div class="reviewer-info">
+                                            <h4 class="reviewer-name">Maria Garcia</h4>
+                                            <p class="reviewer-title">Beauty Enthusiast</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="review-card">
+                                    <div class="stars">
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                    </div>
+                                    <p class="review-text">"Perfect for beginners! The step-by-step approach made
+                                        everything
+                                        so easy to
+                                        follow."</p>
+                                    <div class="reviewer">
+                                        <div class="reviewer-avatar">
+                                            <img src="./assets/media/avatar-1.png" alt="">
+                                        </div>
+                                        <div class="reviewer-info">
+                                            <h4 class="reviewer-name">Maria Garcia</h4>
+                                            <p class="reviewer-title">Beauty Enthusiast</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="review-card">
+                                    <div class="stars">
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                    </div>
+                                    <p class="review-text">"Professional quality courses that really help you
+                                        develop real
+                                        skills.
+                                        Highly recommended!"</p>
+                                    <div class="reviewer">
+                                        <div class="reviewer-avatar">
+                                            <img src="./assets/media/avatar-1.png" alt="">
+                                        </div>
+                                        <div class="reviewer-info">
+                                            <h4 class="reviewer-name">Emily Chen</h4>
+                                            <p class="reviewer-title">Professional MUA</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="review-card">
+                                    <div class="stars">
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                    <p class="review-text">"The courses are incredibly detailed and the instructors
+                                        are
+                                        amazing. I've
+                                        learned so much!"</p>
+                                    <div class="reviewer">
+                                        <div class="reviewer-avatar">
+                                            <img src="./assets/media/avatar-1.png" alt="">
+                                        </div>
+                                        <div class="reviewer-info">
+                                            <h4 class="reviewer-name">Sarah Johnson</h4>
+                                            <p class="reviewer-title">Makeup Artist</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="review-card">
+                                    <div class="stars">
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                    </div>
+                                    <p class="review-text">"Perfect for beginners! The step-by-step approach made
+                                        everything
+                                        so easy to
+                                        follow."</p>
+                                    <div class="reviewer">
+                                        <div class="reviewer-avatar">
+                                            <img src="./assets/media/avatar-1.png" alt="">
+                                        </div>
+                                        <div class="reviewer-info">
+                                            <h4 class="reviewer-name">Maria Garcia</h4>
+                                            <p class="reviewer-title">Beauty Enthusiast</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="review-card">
+                                    <div class="stars">
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                    </div>
+                                    <p class="review-text">"Perfect for beginners! The step-by-step approach made
+                                        everything
+                                        so easy to
+                                        follow."</p>
+                                    <div class="reviewer">
+                                        <div class="reviewer-avatar">
+                                            <img src="./assets/media/avatar-1.png" alt="">
+                                        </div>
+                                        <div class="reviewer-info">
+                                            <h4 class="reviewer-name">Maria Garcia</h4>
+                                            <p class="reviewer-title">Beauty Enthusiast</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="review-card">
+                                    <div class="stars">
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                        <span class="star rated">★</span>
+                                    </div>
+                                    <p class="review-text">"Professional quality courses that really help you
+                                        develop real
+                                        skills.
+                                        Highly recommended!"</p>
+                                    <div class="reviewer">
+                                        <div class="reviewer-avatar">
+                                            <img src="./assets/media/avatar-1.png" alt="">
+                                        </div>
+                                        <div class="reviewer-info">
+                                            <h4 class="reviewer-name">Emily Chen</h4>
+                                            <p class="reviewer-title">Professional MUA</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-comments">
+            <div class="container">
+                <div class="w-full max-w-3xl relative z-3">
+                    <!-- Requirements Section -->
+                    <div class="section">
+                        <h2 class="section-title">Requirements</h2>
+                        <ul class="requirements-list">
+                            <li>Prepare to master real aesthetic procedures</li>
+                            <li>Be ready to learn an insane amount of awesome stuff</li>
+                            <li>Be ready to build a loyal client base</li>
+                        </ul>
+                    </div>
+
+                    <!-- FAQ Section -->
+                    <div class="section">
+                        <h2 class="section-title">FAQ</h2>
+
+                        <div class="faq-item-1">
+                            <div class="faq-question-1" onclick="toggleFAQ(this)">
+                                <span>What is the course level?</span>
+                                <span class="faq-arrow">
+                                    <img src="./assets/media/dropdown-arrow.svg" alt="">
+                                </span>
+                            </div>
+                            <div class="faq-answer-1">
+                                <p>This course is designed for intermediate to advanced practitioners who want to
+                                    master
+                                    aesthetic procedures and build a successful practice.</p>
+                            </div>
                         </div>
 
-                        <!-- FAQ Section -->
-                        <div class="section">
-                            <h2 class="section-title">FAQ</h2>
-
-                            <div class="faq-item-1">
-                                <div class="faq-question-1" onclick="toggleFAQ(this)">
-                                    <span>What is the course level?</span>
-                                    <span class="faq-arrow">
-                                        <img src="./assets/media/dropdown-arrow.svg" alt="">
-                                    </span>
-                                </div>
-                                <div class="faq-answer-1">
-                                    <p>This course is designed for intermediate to advanced practitioners who want to
-                                        master
-                                        aesthetic procedures and build a successful practice.</p>
-                                </div>
+                        <div class="faq-item-1">
+                            <div class="faq-question-1" onclick="toggleFAQ(this)">
+                                <span>Is it a supported course?</span>
+                                <span class="faq-arrow">
+                                    <img src="./assets/media/dropdown-arrow.svg" alt="">
+                                </span>
                             </div>
-
-                            <div class="faq-item-1">
-                                <div class="faq-question-1" onclick="toggleFAQ(this)">
-                                    <span>Is it a supported course?</span>
-                                    <span class="faq-arrow">
-                                        <img src="./assets/media/dropdown-arrow.svg" alt="">
-                                    </span>
-                                </div>
-                                <div class="faq-answer-1">
-                                    <p>Yes, this course includes comprehensive support including instructor guidance,
-                                        peer
-                                        community access, and ongoing resources.</p>
-                                </div>
-                            </div>
-
-                            <div class="faq-item-1">
-                                <div class="faq-question-1" onclick="toggleFAQ(this)">
-                                    <span>Can I have a private meeting with the instructor?</span>
-                                    <span class="faq-arrow">
-                                        <img src="./assets/media/dropdown-arrow.svg" alt="">
-                                    </span>
-                                </div>
-                                <div class="faq-answer-1">
-                                    <p>Private consultations with the instructor are available as part of our premium
-                                        support package. Contact us for scheduling details.
-                                    </p>
-                                </div>
+                            <div class="faq-answer-1">
+                                <p>Yes, this course includes comprehensive support including instructor guidance,
+                                    peer
+                                    community access, and ongoing resources.</p>
                             </div>
                         </div>
 
-                        <!-- Suggested by top companies -->
-                        <div class="section">
-                            <div class="companies-container">
-                                <h3>
-                                    Suggested by top companies
-                                </h3>
-                                <p class="companies-text">Top companies suggest this course to their employees and staff
+                        <div class="faq-item-1">
+                            <div class="faq-question-1" onclick="toggleFAQ(this)">
+                                <span>Can I have a private meeting with the instructor?</span>
+                                <span class="faq-arrow">
+                                    <img src="./assets/media/dropdown-arrow.svg" alt="">
+                                </span>
+                            </div>
+                            <div class="faq-answer-1">
+                                <p>Private consultations with the instructor are available as part of our premium
+                                    support package. Contact us for scheduling details.
                                 </p>
+                            </div>
+                        </div>
+                    </div>
 
-                                <div class="companies-grid">
-                                    <div class="company-logo">
-                                        <span class="company-text">ДЗЕН</span>
-                                    </div>
-                                    <div class="company-logo">
-                                        <span class="company-text">ROBLOX</span>
-                                    </div>
-                                    <div class="company-logo">
-                                        <span class="company-text">ДЗЕН</span>
-                                    </div>
-                                    <div class="company-logo">
-                                        <span class="company-text">ROBLOX</span>
-                                    </div>
+                    <!-- Suggested by top companies -->
+                    <div class="section">
+                        <div class="companies-container">
+                            <h3>
+                                Suggested by top companies
+                            </h3>
+                            <p class="companies-text">Top companies suggest this course to their employees and staff
+                            </p>
+
+                            <div class="companies-grid">
+                                <div class="company-logo">
+                                    <span class="company-text">ДЗЕН</span>
+                                </div>
+                                <div class="company-logo">
+                                    <span class="company-text">ROBLOX</span>
+                                </div>
+                                <div class="company-logo">
+                                    <span class="company-text">ДЗЕН</span>
+                                </div>
+                                <div class="company-logo">
+                                    <span class="company-text">ROBLOX</span>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Comments Section -->
-                        <div class="section">
-                            <h2 class="section-title">Comments <span class="comments-count">(0)</span></h2>
-                            <textarea class="comments-textarea" placeholder="Share your thoughts about this course..."
-                                id="commentText"></textarea>
-                            <button class="post-comment-btn" onclick="postComment()">Post comment</button>
-                        </div>
+                    <!-- Comments Section -->
+                    <div class="section">
+                        <h2 class="section-title">Comments <span class="comments-count">(0)</span></h2>
+                        <textarea class="comments-textarea" placeholder="Share your thoughts about this course..."
+                            id="commentText"></textarea>
+                        <button class="post-comment-btn" onclick="postComment()">Post comment</button>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-        </div>
     </main>
 
     <!-- Footer -->
@@ -678,7 +754,13 @@
                 dynamicBullets: true,
                 clickable: true,
             },
+            slidesPerView: 2,
+            spaceBetween: 10,
             breakpoints: {
+                576: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
                 640: {
                     slidesPerView: 3,
                     spaceBetween: 20,
